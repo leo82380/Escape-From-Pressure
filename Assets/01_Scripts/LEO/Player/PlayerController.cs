@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -10,6 +7,8 @@ public class PlayerController : MonoBehaviour
     
     private CharacterController characterController;
     private bool _isCrouching;
+    private float gravity = -5f;
+    private float yVelocity = 0f;
 
     private void Awake()
     {
@@ -22,26 +21,22 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 moveDirection = new Vector3(horizontal, 0, vertical);
-        moveDirection = cameraTransform.TransformDirection(moveDirection);
-
-        if (Input.GetKeyDown(KeyCode.LeftControl) && !_isCrouching)
-        {
-            _isCrouching = true;
-        }
-        if (Input.GetKeyDown(KeyCode.LeftControl) && _isCrouching)
+        
+        if (_isCrouching && Input.GetKeyDown(KeyCode.LeftControl))
         {
             _isCrouching = false;
-        }
-        
-        if (_isCrouching)
-        {
-            moveSpeed = 7f;
-        }
-        else
-        {
             moveSpeed = 10f;
         }
+        else if (!_isCrouching && Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            _isCrouching = true;
+            moveSpeed = 5f;
+        }
+        moveDirection = cameraTransform.TransformDirection(moveDirection);
         moveDirection *= moveSpeed;
+        
+        yVelocity += gravity * Time.deltaTime;
+        moveDirection.y = yVelocity;
         
         characterController.Move(moveDirection * Time.deltaTime);
     }
