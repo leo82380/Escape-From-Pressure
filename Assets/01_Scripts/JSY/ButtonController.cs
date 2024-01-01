@@ -15,7 +15,7 @@ public class ButtonController : MonoBehaviour
         if (!isPanel)
         {
             isPanel = true;
-            _optionPanel.transform.DOMoveX(5, 0.5f).SetEase(ease);
+            _optionPanel.transform.DOMoveX(0, 0.5f).SetEase(ease);
         }
         else
         {
