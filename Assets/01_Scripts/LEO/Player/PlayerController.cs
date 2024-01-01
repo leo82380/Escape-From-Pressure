@@ -22,6 +22,18 @@ public class PlayerController : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
         Vector3 moveDirection = new Vector3(horizontal, 0, vertical);
         
+        moveDirection = cameraTransform.TransformDirection(moveDirection);
+        moveDirection *= moveSpeed;
+        
+        yVelocity += gravity * Time.deltaTime;
+        moveDirection.y = yVelocity;
+        
+        characterController.Move(moveDirection * Time.deltaTime);
+        Crouch();
+    }
+    
+    private void Crouch()
+    {
         if (_isCrouching && Input.GetKeyDown(KeyCode.LeftControl))
         {
             _isCrouching = false;
@@ -30,14 +42,10 @@ public class PlayerController : MonoBehaviour
         else if (!_isCrouching && Input.GetKeyDown(KeyCode.LeftControl))
         {
             _isCrouching = true;
-            moveSpeed = 5f;
+            moveSpeed = 3f;
         }
-        moveDirection = cameraTransform.TransformDirection(moveDirection);
-        moveDirection *= moveSpeed;
         
-        yVelocity += gravity * Time.deltaTime;
-        moveDirection.y = yVelocity;
-        
-        characterController.Move(moveDirection * Time.deltaTime);
+        float targetY = _isCrouching ? 0.2f : 0.5f;
+        cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, new Vector3(0, targetY, 0), 0.2f);
     }
 }
