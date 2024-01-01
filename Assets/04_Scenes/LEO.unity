@@ -409,6 +409,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Capsule
       objectReference: {fileID: 0}
+    - target: {fileID: 8840383328734655660, guid: b1229820c58aed748bc50def76a362fb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9002692673347910970, guid: b1229820c58aed748bc50def76a362fb,
         type: 3}
       propertyPath: m_RenderPostProcessing
@@ -531,6 +536,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765207357922213540, guid: c57f287a3599c144fb7e054ed54b30c0,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
