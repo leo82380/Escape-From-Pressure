@@ -9,11 +9,13 @@ public class Player : MonoBehaviour
     
     
     private Rigidbody _rigidbody;
+    private Camera _mainCamera;
     private bool _isCrouching;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _mainCamera = Camera.main;
     }
     
     private void Update()
@@ -21,7 +23,7 @@ public class Player : MonoBehaviour
         float mouseX = Input.GetAxisRaw("Mouse X");
         float mouseY = Input.GetAxisRaw("Mouse Y");
         transform.Rotate(Vector3.up * mouseX);
-        Camera.main.transform.Rotate(Vector3.left * mouseY);
+        _mainCamera.transform.Rotate(Vector3.left * mouseY);
     }
 
     private void FixedUpdate()
