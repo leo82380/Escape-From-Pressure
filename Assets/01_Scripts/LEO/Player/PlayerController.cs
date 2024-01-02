@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
         Crouch();
     }
     
+    // 웅크리기
     private void Crouch()
     {
         if (_isCrouching && Input.GetKeyDown(KeyCode.LeftControl))
