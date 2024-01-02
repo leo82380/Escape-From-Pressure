@@ -10,6 +10,7 @@ public class PlayerCheck : MonoBehaviour
 
     private Vector3 playerTransform;
     private bool canPanel;
+    public bool isTyping;
     private void Update()
     {
         playerTransform = FindObjectOfType<PlayerController>().transform.position;
@@ -19,10 +20,10 @@ public class PlayerCheck : MonoBehaviour
         {
             FindObjectOfType<PlayerInteraction>().SetActiveInteractionPanel(true, _interactionText);
             canPanel = false;
-            if(Input.GetKeyDown(KeyCode.F))
+            if(Input.GetKeyDown(KeyCode.F) && !isTyping)
             {
-                //StartCoroutine()
-                FindObjectOfType<PlayerInteraction>().SetActiveInteractionPanel(false);
+                isTyping = true;
+                StartCoroutine(FindObjectOfType<DialogueManager>().TypingRoutine(_objectName, _explainText, this));
             }
         }
         else
