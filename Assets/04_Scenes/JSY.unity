@@ -907,6 +907,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1272153548}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2100271064 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2810919643264429453, guid: b5a88a9a12149e04d8a2b3d3bfb42833,
+    type: 3}
+  m_PrefabInstance: {fileID: 1272153548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2378582602238114686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -930,6 +936,11 @@ PrefabInstance:
       propertyPath: _inputField_PW
       value: 
       objectReference: {fileID: 1414724575}
+    - target: {fileID: 7580758009246662967, guid: 9649379d7646b0c42838540d8daad592,
+        type: 3}
+      propertyPath: _inventoryPanel
+      value: 
+      objectReference: {fileID: 2100271064}
     - target: {fileID: 8197346750555754109, guid: 9649379d7646b0c42838540d8daad592,
         type: 3}
       propertyPath: m_LocalPosition.x
