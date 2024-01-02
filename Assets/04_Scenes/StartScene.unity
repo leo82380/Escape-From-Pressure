@@ -734,6 +734,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonType: 2
+  _myText: {fileID: 1127858985}
+  _anotherTexts:
+  - {fileID: 1214960047}
+  - {fileID: 1802664360}
 --- !u!114 &279042918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1218,6 +1222,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonType: 0
+  _myText: {fileID: 1214960047}
+  _anotherTexts:
+  - {fileID: 1802664360}
+  - {fileID: 1127858985}
 --- !u!114 &1237779812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1609,6 +1617,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonType: 1
+  _myText: {fileID: 1802664360}
+  _anotherTexts:
+  - {fileID: 1214960047}
+  - {fileID: 1127858985}
 --- !u!114 &2143753107
 MonoBehaviour:
   m_ObjectHideFlags: 0
