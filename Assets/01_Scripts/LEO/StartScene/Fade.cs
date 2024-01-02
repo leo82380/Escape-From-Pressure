@@ -7,10 +7,10 @@ using DG.Tweening;
 public class Fade : MonoSingleton<Fade>
 {
     private Image image;
-    private void Awake()
+    public override void Awake()
     {
+        base.Awake();   
         image = GetComponent<Image>();
-        FadeOut(3);
     }
     
     public void FadeIn(float duration)
