@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (!FindObjectOfType<DialogueManager>().canTyping) return;
+
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 moveDirection = new Vector3(horizontal, 0, vertical);
