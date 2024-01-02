@@ -8,6 +8,7 @@ using DG.Tweening;
 public class ButtonController : MonoBehaviour
 {
     [SerializeField] private GameObject _optionPanel;
+    [SerializeField] private GameObject _inventoryPanel;
     [SerializeField] private TMP_InputField _inputField_PW;
     [SerializeField] private Ease ease;
     [SerializeField] private string _passwordNumber;
@@ -19,6 +20,23 @@ public class ButtonController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             Option_Button();
+        }
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            Inventory();
+        }
+    }
+    private void Inventory()
+    {
+        if (!isPanel)
+        {
+            isPanel = true;
+            _inventoryPanel.transform.DOMoveY(540, 0.8f).SetEase(ease);
+        }
+        else
+        {
+            isPanel = false;
+            _inventoryPanel.transform.DOMoveY(540-1100, 0.8f).SetEase(ease);
         }
     }
     public void Option_Button()
