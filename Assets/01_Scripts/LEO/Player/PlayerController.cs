@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
         
         characterController.Move(moveDirection * Time.deltaTime);
         Crouch();
+        Run();
     }
     
     // 웅크리기
@@ -48,5 +49,17 @@ public class PlayerController : MonoBehaviour
         
         float targetY = _isCrouching ? 0.2f : 0.5f;
         cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, new Vector3(0, targetY, 0), 0.2f);
+    }
+    
+    private void Run()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            moveSpeed = 10f;
+        }
+        else
+        {
+            moveSpeed = 5f;
+        }
     }
 }
