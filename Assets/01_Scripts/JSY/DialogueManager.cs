@@ -29,7 +29,7 @@ public class DialogueManager : MonoBehaviour
 
             yield return new WaitForSeconds(0.05f);
         }
-
+        yield return new WaitForSeconds(0.5f);
         playerCheck.isTyping = false;
         _dialoguePanel.SetActive(false);
     }
