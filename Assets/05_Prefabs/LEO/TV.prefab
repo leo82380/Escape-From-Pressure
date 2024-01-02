@@ -11,17 +11,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6f7969e8b31a3de43a8d2b39208e04ac,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.34
+      value: -1.873
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6f7969e8b31a3de43a8d2b39208e04ac,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4
+      value: 1.479
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6f7969e8b31a3de43a8d2b39208e04ac,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8
+      value: -2.901
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6f7969e8b31a3de43a8d2b39208e04ac,
         type: 3}
@@ -41,12 +41,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6f7969e8b31a3de43a8d2b39208e04ac,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6f7969e8b31a3de43a8d2b39208e04ac,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6f7969e8b31a3de43a8d2b39208e04ac,
         type: 3}
@@ -77,6 +77,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TV
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6f7969e8b31a3de43a8d2b39208e04ac,
+        type: 3}
+      propertyPath: m_TagString
+      value: InteractionObject
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -173,6 +178,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectName: TV
   _interactionText: "\uC791\uB3D9\uC2DC\uD0A4\uAE30"
-  _explainText: "\uB0A1\uC740 TV\uB2E4. \uC791\uB3D9\uC740 \uB418\uC9C0 \uC54A\uB294
-    \uB4EF\uD558\uB2E4."
+  _explainText: "...\uC791\uB3D9\uB418\uC9C0 \uC54A\uB294 \uAC70 \uAC19\uB2E4."
   isTyping: 0
