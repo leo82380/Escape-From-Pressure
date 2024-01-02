@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 240995101056576885}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.47, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -116,7 +116,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 2403448355940660723}
   - component: {fileID: 2562692034334122218}
   - component: {fileID: 2307152650580895618}
+  - component: {fileID: 3902310652992858537}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -301,3 +302,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 500
+--- !u!114 &3902310652992858537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8626467299966916345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448ee43318884184c91cf3a1317b3c26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionPanel: {fileID: 0}
+  _fText: {fileID: 0}

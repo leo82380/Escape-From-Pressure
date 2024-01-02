@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Transform cameraTransform;
-    [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private float moveSpeed = 5f;
     
     private CharacterController characterController;
     private bool _isCrouching;
@@ -30,22 +30,36 @@ public class PlayerController : MonoBehaviour
         
         characterController.Move(moveDirection * Time.deltaTime);
         Crouch();
+        Run();
     }
     
+    // 웅크리기
     private void Crouch()
     {
         if (_isCrouching && Input.GetKeyDown(KeyCode.LeftControl))
         {
             _isCrouching = false;
-            moveSpeed = 10f;
+            moveSpeed = 5f;
         }
         else if (!_isCrouching && Input.GetKeyDown(KeyCode.LeftControl))
         {
             _isCrouching = true;
-            moveSpeed = 3f;
+            moveSpeed = 1f;
         }
         
         float targetY = _isCrouching ? 0.2f : 0.5f;
         cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, new Vector3(0, targetY, 0), 0.2f);
+    }
+    
+    private void Run()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            moveSpeed = 10f;
+        }
+        else
+        {
+            moveSpeed = 5f;
+        }
     }
 }
