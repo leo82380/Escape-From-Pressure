@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class PlayerCheck : MonoBehaviour
 {
+    [SerializeField] private string _objectName;
     [SerializeField] private string _interactionText;
+    [SerializeField] private string _explainText;
 
-    private Transform playerTransform;
+    private Vector3 playerTransform;
     private bool canPanel;
     private void Update()
     {
-        playerTransform = FindObjectOfType<PlayerController>().transform;
-        Vector3 transformm = transform.position - playerTransform.position;
-        if (transformm.x < 2f && transformm.x > -2f && transformm.z < 2f && transformm.z > -2f)
+        playerTransform = FindObjectOfType<PlayerController>().transform.position;
+        float transformm = Vector3.Distance(transform.position, playerTransform);
+        
+        if (transformm < 2f)
         {
             FindObjectOfType<PlayerInteraction>().SetActiveInteractionPanel(true, _interactionText);
             canPanel = false;
+            if(Input.GetKeyDown(KeyCode.F))
+            {
+                //StartCoroutine()
+                FindObjectOfType<PlayerInteraction>().SetActiveInteractionPanel(false);
+            }
         }
         else
         {
@@ -24,7 +32,7 @@ public class PlayerCheck : MonoBehaviour
             {
                 canPanel = true;
             }
-            FindObjectOfType<PlayerInteraction>().SetActiveInteractionPanel(false, _interactionText);
+            FindObjectOfType<PlayerInteraction>().SetActiveInteractionPanel(false);
         }
     }
 
