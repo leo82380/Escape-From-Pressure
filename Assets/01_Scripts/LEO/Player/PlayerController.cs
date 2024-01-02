@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     
     private CharacterController characterController;
+    private DialogueManager _dialogueManager;
     private bool _isCrouching;
     private float gravity = -5f;
     private float yVelocity = 0f;
@@ -14,11 +15,12 @@ public class PlayerController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         cameraTransform = Camera.main.transform;
+        _dialogueManager = FindObjectOfType<DialogueManager>();
     }
 
     private void Update()
     {
-        if (!FindObjectOfType<DialogueManager>().canTyping) return;
+        if (!_dialogueManager.canTyping) return;
 
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
