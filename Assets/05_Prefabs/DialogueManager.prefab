@@ -47,3 +47,4 @@ MonoBehaviour:
   _objNameText: {fileID: 0}
   objExplainText: {fileID: 0}
   _dialoguePanel: {fileID: 0}
+  canTyping: 1
