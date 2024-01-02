@@ -31,12 +31,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: afc26839df0015045b098e0775735a39,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.414
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: afc26839df0015045b098e0775735a39,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2.13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: afc26839df0015045b098e0775735a39,
         type: 3}
@@ -84,7 +84,8 @@ PrefabInstance:
       value: WallEye
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8821623529969584324, guid: afc26839df0015045b098e0775735a39, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afc26839df0015045b098e0775735a39, type: 3}

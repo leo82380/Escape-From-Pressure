@@ -1,8 +1,10 @@
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class StartScene_Button : MonoBehaviour, IPointerClickHandler
+public class StartScene_Button : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private enum ButtonType
     {
@@ -11,6 +13,8 @@ public class StartScene_Button : MonoBehaviour, IPointerClickHandler
         Exit
     }
     [SerializeField] private ButtonType buttonType;
+    [SerializeField] private TMP_Text _myText;
+    [SerializeField] private List<TMP_Text> _anotherTexts;
     
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -31,6 +35,24 @@ public class StartScene_Button : MonoBehaviour, IPointerClickHandler
             case ButtonType.Exit:
                 Application.Quit();
                 break;
+        }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        _myText.fontSize = Mathf.Lerp(_myText.fontSize, 150, Time.deltaTime * 20);
+        foreach (var text in _anotherTexts)
+        {
+            text.fontSize = Mathf.Lerp(text.fontSize, 50, Time.deltaTime * 20);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        _myText.fontSize = 80;
+        foreach (var text in _anotherTexts)
+        {
+            text.fontSize = 80;
         }
     }
 }
