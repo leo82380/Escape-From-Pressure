@@ -8,11 +8,12 @@ public class PlayerRay : MonoBehaviour
     RaycastHit hit;
 
     Camera mainCamera;
-
+    private PlayerInteraction _playerInteraction;
     public bool _canTyping;
     private void Awake()
     {
         mainCamera = Camera.main;
+        _playerInteraction = FindObjectOfType<PlayerInteraction>();
     }
     private void Update()
     {
@@ -26,7 +27,7 @@ public class PlayerRay : MonoBehaviour
                 Debug.Log("Ãæµ¹ÇÔ");
                 if (hit.collider != null && dis <= 3f)
                 {
-                    FindObjectOfType<PlayerInteraction>().SetActiveInteractionPanel(true, hit.collider.GetComponent<PlayerCheck>()._interactionText);
+                    _playerInteraction.SetActiveInteractionPanel(true, hit.collider.GetComponent<PlayerCheck>()._interactionText);
                     if (Input.GetKeyDown(KeyCode.F))
                     {
                         hit.collider.GetComponent<PlayerCheck>().Typing();
@@ -35,7 +36,7 @@ public class PlayerRay : MonoBehaviour
             }
             else
             {
-                FindObjectOfType<PlayerInteraction>().SetActiveInteractionPanel(false);
+                _playerInteraction.SetActiveInteractionPanel(false);
             }
         }
     }
