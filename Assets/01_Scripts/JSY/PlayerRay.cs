@@ -31,6 +31,10 @@ public class PlayerRay : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.F))
                     {
                         hit.collider.GetComponent<PlayerCheck>().Typing();
+                        if (hit.collider.GetComponent<DrawerAnimation>())
+                        {
+                            hit.collider.GetComponent<DrawerAnimation>().OpenDrawer();
+                        }
                     }
                 }
             }
