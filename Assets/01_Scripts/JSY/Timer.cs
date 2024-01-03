@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -7,6 +5,7 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _timerText;
     [SerializeField] private float _minute, _second;
+    [SerializeField] private int day;
     private float _time = 0;
     void Update()
     {
@@ -23,11 +22,11 @@ public class Timer : MonoBehaviour
 
         if (_minute < 10)
         {
-            _timerText.text = "0" + _minute + ":" + _secondTotal;
+            _timerText.text = "<size=40>" + day + "일차</size>\n0" + _minute + ":" + _secondTotal;
         }
         else
         {
-            _timerText.text = _minute + ":" + Mathf.Round(_second - _time).ToString();
+            _timerText.text = "<size=40>" + day + "일차</size>\n0" + _minute + ":" + Mathf.Round(_second - _time).ToString();
         }
 
         if (_second - _time <= 0 )
