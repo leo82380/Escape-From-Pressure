@@ -26,47 +26,47 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 91dd6f861b7af6843a75e3951f6b084d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.498
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91dd6f861b7af6843a75e3951f6b084d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.5440006
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91dd6f861b7af6843a75e3951f6b084d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.4679985
+      value: -3.29
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91dd6f861b7af6843a75e3951f6b084d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91dd6f861b7af6843a75e3951f6b084d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.5
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91dd6f861b7af6843a75e3951f6b084d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91dd6f861b7af6843a75e3951f6b084d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.5
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91dd6f861b7af6843a75e3951f6b084d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91dd6f861b7af6843a75e3951f6b084d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91dd6f861b7af6843a75e3951f6b084d,
         type: 3}
@@ -160,6 +160,7 @@ MonoBehaviour:
   mat: 
   isTyping: 0
   fakeisRun: 0
+  imageisRun: 0
 --- !u!54 &6827116686027218170
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -182,8 +183,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

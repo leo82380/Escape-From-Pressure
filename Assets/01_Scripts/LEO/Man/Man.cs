@@ -21,9 +21,17 @@ public class Man : MonoBehaviour
         { 
             if (hit.collider.GetComponent<PlayerController>()) 
             { 
-                _animator.SetTrigger("Run");
+                StartCoroutine(Run());
             }
         }
+    }
+
+    private IEnumerator Run()
+    {
+        _animator.SetTrigger("Run");
+        yield return new WaitForSeconds(3f);
+        PetDoorAnimation petDoorAnimation = FindObjectOfType<PetDoorAnimation>();
+        petDoorAnimation.CloseDoor();
     }
     
     private void OnDrawGizmos()
