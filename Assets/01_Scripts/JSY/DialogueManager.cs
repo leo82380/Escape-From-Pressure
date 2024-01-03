@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
     }
     public IEnumerator TypingRoutine(string objectNameText, string objectExplainText, PlayerCheck playerCheck)
     {
-        if(canTyping)
+        if(canTyping && objectExplainText != "")
         {
             canTyping = false;
             _dialoguePanel.SetActive(true);
@@ -38,7 +38,16 @@ public class DialogueManager : MonoBehaviour
             playerCheck.isTyping = false;
             _dialoguePanel.SetActive(false);
             if (playerCheck._objType == ObjectType.getObject) playerCheck.GetObject();
-            else if (playerCheck._objType == ObjectType.getObject) playerCheck.TrickObject();
+            else if (playerCheck._objType == ObjectType.fakeObject) playerCheck.TrickObject();
+            else if (playerCheck._objType == ObjectType.imageObject) playerCheck.ImageObject();
+            canTyping = true;
+        }
+        else if(objectExplainText == "")
+        {
+            playerCheck.isTyping = false;
+            if (playerCheck._objType == ObjectType.getObject) playerCheck.GetObject();
+            else if (playerCheck._objType == ObjectType.fakeObject) playerCheck.TrickObject();
+            else if (playerCheck._objType == ObjectType.imageObject) playerCheck.ImageObject();
             canTyping = true;
         }
     }

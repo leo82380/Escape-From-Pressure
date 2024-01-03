@@ -6,7 +6,8 @@ public enum ObjectType
 {
     getObject,
     notGetObject,
-    fakeObject
+    fakeObject,
+    imageObject
 }
 public class PlayerCheck : MonoBehaviour
 {
@@ -15,15 +16,20 @@ public class PlayerCheck : MonoBehaviour
     [SerializeField] public string _interactionText;
     [SerializeField] private string _explainText;
     [SerializeField] private int getObjectNumber;
+    [SerializeField] private int[] mat;
 
     public bool isTyping;
+    public bool fakeisRun;
+    public bool imageisRun;
     private DialogueManager _dialogueManager;
     private Inventory _inventory;
+    private PictureMaterial[] _pictureMat;
 
     private void Awake()
     {
         _dialogueManager = FindObjectOfType<DialogueManager>();
         _inventory = FindObjectOfType<Inventory>();
+        _pictureMat = FindObjectsOfType<PictureMaterial>();
     }
     public void Typing()
     {
@@ -41,6 +47,30 @@ public class PlayerCheck : MonoBehaviour
 
     public void TrickObject()
     {
+        for (int i = 0; i < _pictureMat.Length; i++)
+        {
+            _pictureMat[i].ChangeMaterial(mat[i]);
+        }
+        Destroy(gameObject);
+        fakeisRun = true;
+    }
 
+    public void ImageObject()
+    {
+        StartCoroutine(ChangeImage());
+    }
+
+    IEnumerator ChangeImage()
+    {
+        if(!imageisRun)
+        {
+            _pictureMat[2].ChangeMaterial(4);
+            yield return new WaitForSeconds(3f);
+            _pictureMat[2].ChangeMaterial(10);
+            for (int i = 0; i < 2; i++)
+                _pictureMat[i].GetComponent<Rigidbody>().isKinematic = false;
+            imageisRun = true;
+        }
+        yield return null;
     }
 }
