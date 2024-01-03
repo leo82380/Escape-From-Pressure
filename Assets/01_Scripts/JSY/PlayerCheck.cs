@@ -7,7 +7,8 @@ public enum ObjectType
     getObject,
     notGetObject,
     fakeObject,
-    imageObject
+    imageObject,
+    offeringObject
 }
 public class PlayerCheck : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class PlayerCheck : MonoBehaviour
     public bool isTyping;
     public bool fakeisRun;
     public bool imageisRun;
+    public bool globeisBroken;
     private DialogueManager _dialogueManager;
     private Inventory _inventory;
     private PictureMaterial[] _pictureMat;
@@ -72,5 +74,18 @@ public class PlayerCheck : MonoBehaviour
             imageisRun = true;
         }
         yield return null;
+    }
+
+    public void OfferingBoxObject()
+    {
+        if(!globeisBroken)
+        {
+            globeisBroken = true;
+            FindObjectOfType<Globe>().ChangeGlobe();
+        }
+        else
+        {
+            FindObjectOfType<OfferingBox>().MoveDown();
+        }
     }
 }
