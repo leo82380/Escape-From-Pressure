@@ -21,7 +21,7 @@ public class StartScene_Button : MonoBehaviour, IPointerClickHandler, IPointerEn
         switch (buttonType)
         {
             case ButtonType.Start:
-                SceneManager.LoadScene("StartScene");
+                SceneManager.LoadScene("JSY");
                 break;
             case ButtonType.Load:
                 DateManager.Instance.Load();
