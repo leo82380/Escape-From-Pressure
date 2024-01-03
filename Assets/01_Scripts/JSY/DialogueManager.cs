@@ -48,6 +48,7 @@ public class DialogueManager : MonoBehaviour
             if (playerCheck._objType == ObjectType.getObject) playerCheck.GetObject();
             else if (playerCheck._objType == ObjectType.fakeObject) playerCheck.TrickObject();
             else if (playerCheck._objType == ObjectType.imageObject) playerCheck.ImageObject();
+            else if (playerCheck._objType == ObjectType.offeringObject) playerCheck.OfferingBoxObject();
             canTyping = true;
         }
     }
