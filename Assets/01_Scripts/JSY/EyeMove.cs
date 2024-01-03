@@ -16,7 +16,6 @@ public class EyeMove : MonoBehaviour
         lookDir = target.position - transform.position;
         lookDir.Normalize();
         var look = Quaternion.LookRotation(lookDir).eulerAngles;
-        print(look.x + " " + look.y);
         
         if (look.x is > 0 and < 180 and > 3)
         {

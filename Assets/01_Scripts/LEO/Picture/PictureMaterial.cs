@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PictureMaterial : MonoSingleton<PictureMaterial>
+public class PictureMaterial : MonoBehaviour
 {
     [SerializeField] private Material[] _materials;
     [SerializeField] private MeshRenderer _meshRenderer;
