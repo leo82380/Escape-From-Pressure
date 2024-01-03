@@ -1,9 +1,15 @@
+using System;
 using UnityEngine;
 
 public class EyeMove : MonoBehaviour
 {
     [SerializeField] private Transform target;
     private Vector3 lookDir;
+
+    private void Awake()
+    {
+        target = FindObjectOfType<PlayerController>().transform;
+    }
 
     private void LateUpdate()
     {
@@ -12,23 +18,24 @@ public class EyeMove : MonoBehaviour
         var look = Quaternion.LookRotation(lookDir).eulerAngles;
         print(look.x + " " + look.y);
         
-        if (look.x > 0 && look.x < 180 && look.x > 3)
+        if (look.x is > 0 and < 180 and > 3)
         {
             look.x = 3;
         }
-        else if (look.x < 360 && look.x > 180 && look.x < 357)
+        else if (look.x is < 360 and > 180 and < 357)
         {
             look.x = 357;
         }
         
-        if (look.y > 0 && look.y < 180 && look.y > 30)
+        if (look.y is > 0 and < 180 and > 6)
         {
-            look.y = 30;
+            look.y = 6;
         }
-        else if (look.y < 360 && look.y > 180 && look.y < 330)
+        else if (look.y is < 360 and > 180 and < 354)
         {
-            look.y = 330;
+            look.y = 354;
         }
-        transform.rotation = Quaternion.Euler(look.x, look.y, 0);
+
+        transform.rotation = Quaternion.Euler(look);
     }
 }

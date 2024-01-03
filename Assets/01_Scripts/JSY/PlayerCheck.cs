@@ -41,6 +41,6 @@ public class PlayerCheck : MonoBehaviour
 
     public void TrickObject()
     {
-
+        PictureMaterial.Instance.ChangeMaterial(1);
     }
 }
