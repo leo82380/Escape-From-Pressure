@@ -11,8 +11,24 @@ public class EyeMove : MonoBehaviour
         lookDir.Normalize();
         var look = Quaternion.LookRotation(lookDir).eulerAngles;
         print(look.x + " " + look.y);
-        var x = Mathf.Clamp(look.x, -3, 3);
-        var y = Mathf.Clamp(look.y, -10, 10);
-        transform.rotation = Quaternion.Euler(x, y, 0);
+        
+        if (look.x > 0 && look.x < 180 && look.x > 3)
+        {
+            look.x = 3;
+        }
+        else if (look.x < 360 && look.x > 180 && look.x < 357)
+        {
+            look.x = 357;
+        }
+        
+        if (look.y > 0 && look.y < 180 && look.y > 30)
+        {
+            look.y = 30;
+        }
+        else if (look.y < 360 && look.y > 180 && look.y < 330)
+        {
+            look.y = 330;
+        }
+        transform.rotation = Quaternion.Euler(look.x, look.y, 0);
     }
 }
