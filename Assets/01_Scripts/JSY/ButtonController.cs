@@ -32,11 +32,13 @@ public class ButtonController : MonoBehaviour
         {
             isPanel = true;
             _inventoryPanel.transform.DOMoveY(540, 0.8f).SetEase(ease);
+            Cursor.lockState = CursorLockMode.None;
         }
         else
         {
             isPanel = false;
             _inventoryPanel.transform.DOMoveY(540-1100, 0.8f).SetEase(ease);
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
     public void Option_Button()
@@ -47,6 +49,7 @@ public class ButtonController : MonoBehaviour
             _optionPanel.transform.DOMoveX(0, 0.5f).SetEase(ease).OnComplete(() =>
             {
                 TimeSet(0);
+                Cursor.lockState = CursorLockMode.None;
             });
         }
         else
@@ -63,12 +66,14 @@ public class ButtonController : MonoBehaviour
         _optionPanel.transform.DOMoveX(-800, 0.5f).SetEase(ease).OnComplete(() =>
         {
             TimeSet(1);
+            Cursor.lockState = CursorLockMode.Locked;
         });
         isPanel = false;
     }
 
     public void ExitScene_Button()
     {
+        DateManager.Instance.Save();
         SceneManager.LoadScene("StartScene");
     }
 
