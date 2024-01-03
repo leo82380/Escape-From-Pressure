@@ -68,7 +68,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _ReflectionStrenght: 1
+    - _ReflectionStrenght: 0.25
     - _Smoothness: 1
     - _SrcBlend: 1
     - _Surface: 1
@@ -77,5 +77,5 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 0.011841535, g: 0.011841535, b: 0.011841535, a: 0}
+    - _Color: {r: 0.0029603837, g: 0.0029603837, b: 0.0029603837, a: 0}
   m_BuildTextureStacks: []
