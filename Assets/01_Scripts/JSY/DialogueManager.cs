@@ -38,6 +38,7 @@ public class DialogueManager : MonoBehaviour
             playerCheck.isTyping = false;
             _dialoguePanel.SetActive(false);
             if (playerCheck._objType == ObjectType.getObject) playerCheck.GetObject();
+            else if (playerCheck._objType == ObjectType.getObject) playerCheck.TrickObject();
             canTyping = true;
         }
     }
