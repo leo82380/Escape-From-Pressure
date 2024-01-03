@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class DrawerAnimation : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class DrawerAnimation : MonoBehaviour
         Bottom
     }
     [SerializeField] private DrawerType drawerType;
+    [SerializeField] private List<GameObject> cockroaches;
 
     private void Awake()
     {
@@ -26,6 +29,11 @@ public class DrawerAnimation : MonoBehaviour
         {
             case DrawerType.Top:
                 _animator.SetBool("IsTop", true);
+                cockroaches.ForEach(x =>
+                {
+                    x.SetActive(true);
+                    x.transform.DOMove(new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0f), 1f).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo).SetDelay(Random.Range(0f, 1f));
+                });
                 StartCoroutine(CloseDrawer());
                 break;
             case DrawerType.Middle:
