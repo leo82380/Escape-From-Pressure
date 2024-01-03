@@ -5,7 +5,8 @@ using UnityEngine;
 public enum ObjectType
 {
     getObject,
-    notGetObject
+    notGetObject,
+    fakeObject
 }
 public class PlayerCheck : MonoBehaviour
 {
@@ -36,5 +37,10 @@ public class PlayerCheck : MonoBehaviour
     {
         _inventory.InventoryImageSetActive(getObjectNumber);
         Destroy(gameObject);
+    }
+
+    public void TrickObject()
+    {
+
     }
 }

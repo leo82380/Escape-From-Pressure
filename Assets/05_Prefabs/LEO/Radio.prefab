@@ -26,17 +26,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b0afe107040f52644b7972f8b0430c5e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.235
+      value: 7.8479996
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0afe107040f52644b7972f8b0430c5e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.257
+      value: 5.9356527
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0afe107040f52644b7972f8b0430c5e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.769
+      value: -4.8189993
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0afe107040f52644b7972f8b0430c5e,
         type: 3}
@@ -146,7 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0637081b40cd55d48b4ab856433b1386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _objType: 1
   _objectName: "\uB77C\uB514\uC624"
   _interactionText: "\uC791\uB3D9\uC2DC\uD0A4\uAE30"
   _explainText: "\uC54C \uC218 \uC5C6\uB294 \uC678\uAD6D\uC5B4\uAC00 \uD758\uB7EC\uB098\uC628\uB2E4."
+  getObjectNumber: 0
   isTyping: 0
