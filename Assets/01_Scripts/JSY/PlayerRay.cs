@@ -37,6 +37,11 @@ public class PlayerRay : MonoBehaviour
                         }
                     }
                 }
+
+                if(dis > 3f)
+                {
+                    _playerInteraction.SetActiveInteractionPanel(false);
+                }
             }
             else
             {
