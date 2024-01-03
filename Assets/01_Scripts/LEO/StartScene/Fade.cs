@@ -7,7 +7,7 @@ using DG.Tweening;
 public class Fade : MonoSingleton<Fade>
 {
     private Image image;
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();   
         image = GetComponent<Image>();

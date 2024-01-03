@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EyeMove : MonoBehaviour
@@ -10,11 +7,12 @@ public class EyeMove : MonoBehaviour
 
     private void LateUpdate()
     {
-        lookDir = (target.position - transform.position).normalized;
-
-        Quaternion from = transform.rotation;
-        Quaternion to = Quaternion.LookRotation(lookDir);
-
-        transform.rotation = Quaternion.Lerp(from, to, Time.deltaTime);
+        lookDir = target.position - transform.position;
+        lookDir.Normalize();
+        var look = Quaternion.LookRotation(lookDir).eulerAngles;
+        print(look.x + " " + look.y);
+        var x = Mathf.Clamp(look.x, -3, 3);
+        var y = Mathf.Clamp(look.y, -10, 10);
+        transform.rotation = Quaternion.Euler(x, y, 0);
     }
 }
