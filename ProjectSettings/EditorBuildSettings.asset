@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/04_Scenes/Main.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/04_Scenes/JSY.unity
+    guid: be7731828e050384f8e5f173af584457
   m_configObjects: {}
