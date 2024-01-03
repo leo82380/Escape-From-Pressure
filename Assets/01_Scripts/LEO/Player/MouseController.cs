@@ -33,9 +33,9 @@ public class MouseController : MonoBehaviour
         {
             rotationX = 35f;
         }
-        if (rotationX < -35f)
+        if (rotationX < -45f)
         {
-            rotationX = -35f;
+            rotationX = -45f;
         }
         
         transform.eulerAngles = new Vector3(-rotationX, rotationY, 0f);

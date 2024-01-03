@@ -30,7 +30,6 @@ public class DrawerAnimation : MonoBehaviour
                 break;
             case DrawerType.Middle:
                 _animator.SetBool("IsMiddle", true);
-                StartCoroutine(CloseDrawer());
                 break;
             case DrawerType.Bottom:
                 _animator.SetTrigger("IsBottom");
