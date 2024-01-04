@@ -10,6 +10,7 @@ public class StartScene_Button : MonoBehaviour, IPointerClickHandler, IPointerEn
     {
         Start,
         Load,
+        AboutGame,
         Exit
     }
     [SerializeField] private ButtonType buttonType;
@@ -21,7 +22,7 @@ public class StartScene_Button : MonoBehaviour, IPointerClickHandler, IPointerEn
         switch (buttonType)
         {
             case ButtonType.Start:
-                SceneManager.LoadScene("JSY");
+                SceneManager.LoadScene("Stage-1");
                 break;
             case ButtonType.Load:
                 DateManager.Instance.Load();
@@ -31,6 +32,9 @@ public class StartScene_Button : MonoBehaviour, IPointerClickHandler, IPointerEn
                     DateManager.Instance.playerData = new PlayerData();
                     DateManager.Instance.Save();
                 }
+                break;
+            case ButtonType.AboutGame:
+                AboutGameController.Instance.ShowPanel();
                 break;
             case ButtonType.Exit:
                 Application.Quit();
