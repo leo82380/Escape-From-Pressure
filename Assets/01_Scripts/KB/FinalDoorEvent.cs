@@ -20,11 +20,6 @@ public class FinalDoorEvent : MonoSingleton<FinalDoorEvent>
         base.Awake();
     }
 
-    private void Start()
-    {
-        filledCircle.gameObject.SetActive(false);
-    }
-
     public IEnumerator DoorEvent()
     {
         Debug.Log("DoorEvent");

@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/04_Scenes/Credit.unity
     guid: 77aa5fe77809eb243a8751f7007a6dd3
+  - enabled: 1
+    path: Assets/04_Scenes/Jumpscare.unity
+    guid: f5e8a6fe2f1e99349898c1e983cfa120
   m_configObjects: {}

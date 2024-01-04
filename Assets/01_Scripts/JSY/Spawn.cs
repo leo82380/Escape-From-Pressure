@@ -11,7 +11,7 @@ public class Spawn : MonoBehaviour
 
     IEnumerator CoolTime()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(10f);
         StartCoroutine(FindObjectOfType<TV_MaterialController>().WhileAnime());
         for (int i = 0; i < 3; i++)
         {
