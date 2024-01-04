@@ -661,45 +661,6 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 915163063895872832}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1242785869 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2695568272074946102, guid: a7b74457fac0da841840a47859766ff8,
-    type: 3}
-  m_PrefabInstance: {fileID: 8186813414075040206}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1242785875
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1242785869}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0a0559999b8b00b49872c6f1318ac1cc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1242785876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1242785869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4d97a88a574a4f40a98814eca2dbcd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1373797146
 GameObject:
   m_ObjectHideFlags: 0
@@ -4100,11 +4061,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 6975280962797995222, guid: b5a88a9a12149e04d8a2b3d3bfb42833,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4176,15 +4132,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2695568272074946102, guid: a7b74457fac0da841840a47859766ff8,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1242785875}
-    - targetCorrespondingSourceObject: {fileID: 2695568272074946102, guid: a7b74457fac0da841840a47859766ff8,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1242785876}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7b74457fac0da841840a47859766ff8, type: 3}
 --- !u!1 &8244366324709177977
 GameObject:

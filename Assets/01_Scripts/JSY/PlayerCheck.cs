@@ -10,7 +10,8 @@ public enum ObjectType
     imageObject,
     offeringObject,
     eyeTrickObject,
-    tvObject
+    tvObject,
+    doorObject
 }
 public class PlayerCheck : MonoBehaviour
 {
