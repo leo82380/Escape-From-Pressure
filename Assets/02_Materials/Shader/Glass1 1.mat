@@ -63,12 +63,12 @@ Material:
     - _DistortStrenght: 0.0001
     - _DstBlend: 10
     - _Metallic: 1
-    - _NoiseScale: 0.01
-    - _NormalStrenght: 0.132
+    - _NoiseScale: 830
+    - _NormalStrenght: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _ReflectionStrenght: 0
+    - _ReflectionStrenght: 0.83
     - _Smoothness: 0
     - _SrcBlend: 1
     - _Surface: 1

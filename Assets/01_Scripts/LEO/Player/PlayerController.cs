@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float moveSpeed = 5f;
     [SerializeField] private string sceneName;
     [SerializeField] private Animator _dadAnimator;
+    [SerializeField] private BoxCollider trigger;
     
     private CharacterController characterController;
     private DialogueManager _dialogueManager;
@@ -80,6 +81,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Trigger"))
         {
+            trigger.isTrigger = true;
             _dadAnimator.SetBool("Run", true);
         }
     }

@@ -10,10 +10,15 @@ public class FinalDoorEvent : MonoSingleton<FinalDoorEvent>
     [SerializeField] private int flagCount = 75;
     [SerializeField] private Image filledCircle;
     
-    private bool isClear = false;
-    private int myCount = 0;
-    private float time = 0;
+    [SerializeField] private bool isClear = false;
+    [SerializeField] private int myCount = 0;
+    [SerializeField] private float time = 0;
     public bool GetIsClear => isClear;
+
+    protected override void Awake()
+    {
+        base.Awake();
+    }
 
     private void Start()
     {
@@ -34,16 +39,14 @@ public class FinalDoorEvent : MonoSingleton<FinalDoorEvent>
             { 
                 myCount++;
                 filledCircle.fillAmount += (float)1 / flagCount;
-
-                if (filledCircle.fillAmount >= 0.99f && myCount == flagCount) isClear = true;
-                else isClear = false; 
             }
-
+            if (filledCircle.fillAmount >= 0.99f && myCount == flagCount) isClear = true;
+            else isClear = false; 
             yield return null;
         }
         
-        if (filledCircle.fillAmount >= 0.99f && myCount == flagCount) isClear = true;
+        if (filledCircle.fillAmount >= 0.99f && myCount >= flagCount) isClear = true;
         else isClear = false;
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("Credit");
     }
 }

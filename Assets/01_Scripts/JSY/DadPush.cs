@@ -6,6 +6,7 @@ using UnityEngine;
 public class DadPush : MonoBehaviour
 {
     private Animator _animator;
+    private bool isEnter = false;
     
     private void Awake()
     {
@@ -16,6 +17,8 @@ public class DadPush : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Doorend"))
         {
+            if (isEnter) return;
+            isEnter = true;
             _animator.SetBool("Run", false);
             _animator.SetBool("Push", true);
             FinalDoorEvent.Instance.StartCoroutine(FinalDoorEvent.Instance.DoorEvent());
