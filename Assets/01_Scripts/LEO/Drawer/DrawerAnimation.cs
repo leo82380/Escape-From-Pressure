@@ -16,7 +16,6 @@ public class DrawerAnimation : MonoBehaviour
         Bottom
     }
     [SerializeField] private DrawerType drawerType;
-    [SerializeField] private GameObject cockroaches;
 
     private void Awake()
     {
