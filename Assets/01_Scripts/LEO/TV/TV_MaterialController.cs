@@ -21,4 +21,11 @@ public class TV_MaterialController : MonoBehaviour
             isNoiseOn = !isNoiseOn;
         }
     }
+
+    public IEnumerator WhileAnime()
+    {
+        isNoiseOn = true;
+        yield return new WaitForSeconds(4.2f);
+        isNoiseOn = false;
+    }
 }

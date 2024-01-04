@@ -16,4 +16,13 @@ public class PictureMaterial : MonoBehaviour
     {
         _meshRenderer.material = _materials[_materialNumber];
     }
+
+    public IEnumerator ChangeAllMaterial()
+    {
+        for (int i = 0; i < _materials.Length; i++)
+        {
+            _meshRenderer.material = _materials[i];
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
 }

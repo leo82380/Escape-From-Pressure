@@ -10,6 +10,7 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
+        hasObject = new bool[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
         {
             inventoryImage[i] = transform.GetChild(i).GetComponent<Image>();
