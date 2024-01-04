@@ -18,6 +18,7 @@ public class PlayerCheck : MonoBehaviour
     [SerializeField] private string _explainText;
     [SerializeField] private int getObjectNumber;
     [SerializeField] private int[] mat;
+    [SerializeField] private PictureMaterial[] _pictureMat;
 
     public bool isTyping;
     public bool fakeisRun;
@@ -25,13 +26,11 @@ public class PlayerCheck : MonoBehaviour
     public bool globeisBroken;
     private DialogueManager _dialogueManager;
     private Inventory _inventory;
-    private PictureMaterial[] _pictureMat;
 
     private void Awake()
     {
         _dialogueManager = FindObjectOfType<DialogueManager>();
         _inventory = FindObjectOfType<Inventory>();
-        _pictureMat = FindObjectsOfType<PictureMaterial>();
     }
     public void Typing()
     {
@@ -81,9 +80,10 @@ public class PlayerCheck : MonoBehaviour
         if(!globeisBroken)
         {
             globeisBroken = true;
+            _explainText = "";
             FindObjectOfType<Globe>().ChangeGlobe();
         }
-        else
+        else if(_inventory.hasObject[1] && globeisBroken)
         {
             FindObjectOfType<OfferingBox>().MoveDown();
         }

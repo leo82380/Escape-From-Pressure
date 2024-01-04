@@ -100,6 +100,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2794701532270262025}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: af692bb4c81c7d7409f0330ea094d3be,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3738506855488893274}
   m_SourcePrefab: {fileID: 100100000, guid: af692bb4c81c7d7409f0330ea094d3be, type: 3}
 --- !u!1 &7249896475839265031 stripped
 GameObject:
@@ -141,3 +145,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17aff6fd021ab3e4bb6fb8238d3acae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3738506855488893274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7249896475839265031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0637081b40cd55d48b4ab856433b1386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objType: 4
+  _objectName: "\uD5CC\uAE08\uD568"
+  _interactionText: "\uC0C1\uD638\uC791\uC6A9\uD558\uAE30"
+  _explainText: 
+  getObjectNumber: 0
+  mat: 
+  isTyping: 0
+  fakeisRun: 0
+  imageisRun: 0
+  globeisBroken: 0
