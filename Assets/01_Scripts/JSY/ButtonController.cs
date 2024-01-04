@@ -12,6 +12,7 @@ public class ButtonController : MonoBehaviour
     [SerializeField] private TMP_InputField _inputField_PW;
     [SerializeField] private Ease ease;
     [SerializeField] private string _passwordNumber;
+    [SerializeField] private DrawerAnimation drawer;
 
     private bool isPanel;
 
@@ -83,10 +84,23 @@ public class ButtonController : MonoBehaviour
         {
             _inputField_PW.text = "";
             print("Á¤´ä!!");
+            StartCoroutine(Success());
+            
         }
         else
         {
-            print("¤´");
+            drawer.passwordPanel.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
+    }
+    
+    private IEnumerator Success()
+    {
+        drawer._animator.SetBool("ISBottom", true);
+        yield return new WaitForSeconds(1.7f);
+        drawer.passwordPanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }

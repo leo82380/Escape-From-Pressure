@@ -11,7 +11,15 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI objExplainText;
     [SerializeField] private GameObject _dialoguePanel;
 
+    private Inventory _inventory;
+
+    [SerializeField] private bool _iSeeYou;
     public bool canTyping = true;
+
+    private void Awake()
+    {
+        _inventory = FindObjectOfType<Inventory>();
+    }
     void Start()
     {
         originText = objExplainText.text;
@@ -44,6 +52,19 @@ public class DialogueManager : MonoBehaviour
             else if (playerCheck._objType == ObjectType.imageObject) playerCheck.ImageObject();
             else if (playerCheck._objType == ObjectType.eyeTrickObject) playerCheck.IrisChangeObject(true);
             else if (playerCheck._objType == ObjectType.tvObject) FindObjectOfType<TV_MaterialController>().PlayNoize();
+            if (playerCheck._objType == ObjectType.doorObject)
+            {
+                print("ªﬂ¿Õ");
+                if(_inventory.hasObject[0])
+                {
+                    if(!_iSeeYou) DoorAnimationController.Instance.DoorOpen(true);
+                    else
+                    {
+                        DoorAnimationController.Instance.StageTwoDoorOpen(true);
+                        _iSeeYou = false;
+                    }
+                }
+            }
             canTyping = true;
         }
         else if(objectExplainText == "")
@@ -53,7 +74,25 @@ public class DialogueManager : MonoBehaviour
             else if (playerCheck._objType == ObjectType.fakeObject) playerCheck.TrickObject();
             else if (playerCheck._objType == ObjectType.imageObject) playerCheck.ImageObject();
             else if (playerCheck._objType == ObjectType.offeringObject) playerCheck.OfferingBoxObject();
+            else if (playerCheck._objType == ObjectType.eyeTrickObject) playerCheck.IrisChangeObject(true);
             else if (playerCheck._objType == ObjectType.tvObject) FindObjectOfType<TV_MaterialController>().PlayNoize();
+            if (playerCheck._objType == ObjectType.doorObject)
+            {
+                
+                if (_inventory.hasObject[0])
+                {
+
+                    if (!_iSeeYou) {
+                        print("ªﬂ¿Õ");
+                        DoorAnimationController.Instance.DoorOpen(true);
+                    } 
+                    else
+                    {
+                        DoorAnimationController.Instance.StageTwoDoorOpen(true);
+                        _iSeeYou = false;
+                    }
+                }
+            }
             canTyping = true;
         }
     }

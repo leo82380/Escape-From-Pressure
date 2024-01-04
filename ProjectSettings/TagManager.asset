@@ -7,6 +7,9 @@ TagManager:
   - InteractionObject
   - playerCanvas
   - Dad
+  - Door
+  - Trigger
+  - Doorend
   layers:
   - Default
   - TransparentFX

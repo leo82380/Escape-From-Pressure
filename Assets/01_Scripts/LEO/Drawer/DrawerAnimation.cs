@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 public class DrawerAnimation : MonoBehaviour
 {
-    private Animator _animator;
+    public Animator _animator;
     private bool _isDrawerOpen = false;
+    [SerializeField] public GameObject passwordPanel;
     
     private enum DrawerType
     {
@@ -25,18 +27,33 @@ public class DrawerAnimation : MonoBehaviour
     
     public void OpenDrawer()
     {
+        Scene scene = SceneManager.GetActiveScene();
+        Debug.Log(scene.name);
         switch (drawerType)
         {
             case DrawerType.Top:
                 _animator.SetBool("IsTop", true);
+                StartCoroutine(CloseDrawer());
                 if (_isDrawerOpen) return;
                 _isDrawerOpen = true;
                 StartCoroutine(FindObjectOfType<Cockroach>().Rotate());
                 break;
             case DrawerType.Middle:
                 _animator.SetBool("IsMiddle", true);
+                if (scene.name is "Stage-2" or "Stage-4")
+                {
+                    StartCoroutine(CloseDrawer());
+                }
                 break;
             case DrawerType.Bottom:
+                if (scene.name is "Stage-3" or "Stage-4")
+                {
+                    _animator.SetTrigger("IsBottom");
+                    if (_animator.GetBool("ISBottom")) return;
+                    passwordPanel.SetActive(true);
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                }
                 _animator.SetTrigger("IsBottom");
                 break;
             default:

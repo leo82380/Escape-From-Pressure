@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Timer : MonoBehaviour
     {
         if(_minute <= 0 && Mathf.Round(_second - _time) <= 0 )
         {
-            print("게임오버");
+            SceneManager.LoadScene("Jumpscare");
             return;
         }
         _time += Time.deltaTime;
