@@ -80,6 +80,7 @@ public class PlayerCheck : MonoBehaviour
         if(!globeisBroken)
         {
             globeisBroken = true;
+            _explainText = "";
             FindObjectOfType<Globe>().ChangeGlobe();
         }
         else if(_inventory.hasObject[1] && globeisBroken)
