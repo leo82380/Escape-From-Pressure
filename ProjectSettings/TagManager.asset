@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InteractionObject
   - playerCanvas
+  - Dad
   layers:
   - Default
   - TransparentFX
