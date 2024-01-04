@@ -2,10 +2,11 @@ using System.Collections;
 using UnityEngine;
 public class Spawn : MonoBehaviour
 {
+    [SerializeField] private bool dddd;
     private void Awake()
     {
         FindObjectOfType<PlayerController>().transform.position = transform.position;
-        StartCoroutine(CoolTime());
+        if(dddd) StartCoroutine(CoolTime());
     }
 
     IEnumerator CoolTime()

@@ -42,6 +42,7 @@ public class DialogueManager : MonoBehaviour
             if (playerCheck._objType == ObjectType.getObject) playerCheck.GetObject();
             else if (playerCheck._objType == ObjectType.fakeObject) playerCheck.TrickObject();
             else if (playerCheck._objType == ObjectType.imageObject) playerCheck.ImageObject();
+            else if (playerCheck._objType == ObjectType.eyeTrickObject) playerCheck.IrisChangeObject(true);
             canTyping = true;
         }
         else if(objectExplainText == "")
@@ -51,6 +52,7 @@ public class DialogueManager : MonoBehaviour
             else if (playerCheck._objType == ObjectType.fakeObject) playerCheck.TrickObject();
             else if (playerCheck._objType == ObjectType.imageObject) playerCheck.ImageObject();
             else if (playerCheck._objType == ObjectType.offeringObject) playerCheck.OfferingBoxObject();
+            else if (playerCheck._objType == ObjectType.eyeTrickObject) playerCheck.IrisChangeObject(true);
             canTyping = true;
         }
     }
