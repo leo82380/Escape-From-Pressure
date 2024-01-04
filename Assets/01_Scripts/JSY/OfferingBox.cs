@@ -3,6 +3,7 @@ using UnityEngine;
 using DG.Tweening;
 public class OfferingBox : MonoBehaviour
 {
+    [SerializeField] private GameObject numberEnvelope;
     void Awake() => StartCoroutine(CoolTimeMove());
     IEnumerator CoolTimeMove()
     {
@@ -12,6 +13,8 @@ public class OfferingBox : MonoBehaviour
 
     public void MoveDown()
     {
+        FindObjectOfType<Inventory>().InventoryImageDestroy(1);
+        numberEnvelope.SetActive(true);
         transform.DOMoveY(-1.58f, 2f);
     }
 }
