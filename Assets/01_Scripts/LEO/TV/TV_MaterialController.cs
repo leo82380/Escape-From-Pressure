@@ -7,7 +7,7 @@ public class TV_MaterialController : MonoBehaviour
 {
     private Animator animator;
     private bool isNoiseOn = false;
-    [SerializeField]
+    [SerializeField] AudioSource[] TVsounds;
 
     private void Awake()
     {
@@ -30,8 +30,16 @@ public class TV_MaterialController : MonoBehaviour
 
     public void PlayNoize()
     {
+        for (int i = 0; i < 3; i++) TVsounds[i].Stop();
         isNoiseOn = !isNoiseOn;
-
+        if(isNoiseOn )
+        {
+            for(int i = 0; i < 3; i++) TVsounds[i].Play();
+        }
+        else
+        {
+            for (int i = 0; i < 3; i++) TVsounds[i].Stop();
+        }
     }
 
 }
