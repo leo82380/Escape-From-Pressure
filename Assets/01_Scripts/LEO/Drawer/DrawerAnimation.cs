@@ -31,6 +31,7 @@ public class DrawerAnimation : MonoBehaviour
         {
             case DrawerType.Top:
                 _animator.SetBool("IsTop", true);
+                StartCoroutine(CloseDrawer());
                 if (_isDrawerOpen) return;
                 _isDrawerOpen = true;
                 StartCoroutine(FindObjectOfType<Cockroach>().Rotate());
