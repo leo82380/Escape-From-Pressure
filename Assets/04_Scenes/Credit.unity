@@ -169,6 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   credit: {fileID: 1940971051}
   image: {fileID: 697893558}
+  background: {fileID: 1150788633}
   speed: 80
 --- !u!1 &329967640
 GameObject:
