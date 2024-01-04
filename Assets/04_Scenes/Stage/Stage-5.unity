@@ -8516,6 +8516,31 @@ PrefabInstance:
       propertyPath: m_InnerSpotAngle
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3321637638472885502, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321637638472885502, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321637638472885502, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321637638472885502, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321637638472885502, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3560264983903492749, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -8571,10 +8596,135 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4210671830720880914, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210671830720880914, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210671830720880914, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210671830720880914, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210671830720880914, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4221241603237044568, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
         type: 3}
       propertyPath: m_Name
       value: Corridor_forEnding 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508194714396368078, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508194714396368078, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508194714396368078, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508194714396368078, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508194714396368078, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038387328014509287, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038387328014509287, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038387328014509287, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038387328014509287, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038387328014509287, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420139394086094524, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420139394086094524, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420139394086094524, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420139394086094524, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420139394086094524, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640962356372088643, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640962356372088643, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640962356372088643, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640962356372088643, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640962356372088643, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
+        type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7904058204209874605, guid: 9bd4f8a45334a464994cfcd9cbcd7f59,
         type: 3}
