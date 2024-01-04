@@ -63,7 +63,7 @@ Material:
     - _DistortStrenght: 0.0001
     - _DstBlend: 10
     - _Metallic: 1
-    - _NoiseScale: 123
+    - _NoiseScale: 0.01
     - _NormalStrenght: 0.132
     - _QueueControl: 0
     - _QueueOffset: 0
