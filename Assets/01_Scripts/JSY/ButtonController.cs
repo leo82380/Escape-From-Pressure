@@ -83,10 +83,22 @@ public class ButtonController : MonoBehaviour
         {
             _inputField_PW.text = "";
             print("Á¤´ä!!");
+            StartCoroutine(Success());
+            
         }
         else
         {
             print("¤´");
         }
+    }
+    
+    private IEnumerator Success()
+    {
+        DrawerAnimation drawer = FindObjectOfType<DrawerAnimation>();
+        drawer._animator.SetBool("ISBottom", true);
+        yield return new WaitForSeconds(1.7f);
+        drawer.passwordPanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
