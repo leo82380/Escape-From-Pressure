@@ -13,6 +13,7 @@ public class DoorAnimationController : MonoSingleton<DoorAnimationController>
     
     public void DoorOpen(bool isOpen)
     {
+        print("ªﬂ¿Õ");
         _animator.SetBool("Open", isOpen);
     }
     
