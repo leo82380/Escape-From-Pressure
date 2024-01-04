@@ -391,7 +391,7 @@ Transform:
   m_GameObject: {fileID: 2695568272074946102}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.08368063, y: 0.17132306, z: -0.029661179}
+  m_LocalPosition: {x: -1.655, y: 0.17132306, z: -0.029661179}
   m_LocalScale: {x: 98.578514, y: 137.60541, z: 108.2972}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -483,14 +483,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objType: 1
-  _objectName: 
-  _interactionText: 
+  _objectName: "\uBB38"
+  _interactionText: "\uBB38 \uC5F4\uAE30"
   _explainText: 
   getObjectNumber: 0
   mat: 
+  _pictureMat: []
   isTyping: 0
   fakeisRun: 0
   imageisRun: 0
+  globeisBroken: 0
 --- !u!1 &5374302906597242852
 GameObject:
   m_ObjectHideFlags: 0
