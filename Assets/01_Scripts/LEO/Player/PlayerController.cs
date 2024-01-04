@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform cameraTransform;
     [SerializeField] public float moveSpeed = 5f;
     [SerializeField] private string sceneName;
+    [SerializeField] private Animator _dadAnimator;
+    [SerializeField] private BoxCollider trigger;
     
     private CharacterController characterController;
     private DialogueManager _dialogueManager;
@@ -75,7 +78,22 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(FadeOutAndScene());       
         }
+
+        if (other.CompareTag("Trigger"))
+        {
+            trigger.isTrigger = true;
+            _dadAnimator.SetBool("Run", true);
+        }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Doorend"))
+        {
+            other.GetComponent<BoxCollider>().isTrigger = false;
+        }
+    }
+
     IEnumerator FadeOutAndScene()
     {
         Fade.Instance.FadeIn(1f);
