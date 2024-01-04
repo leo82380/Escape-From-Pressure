@@ -15,9 +15,9 @@ public class Man : MonoBehaviour
 
     private void Update()
     {
-        _ray = new Ray(Vector3.one, Vector3.left);
+        _ray = new Ray(transform.position, Vector3.left);
         RaycastHit hit;
-        if (Physics.Raycast(_ray, out hit, 1f))
+        if (Physics.Raycast(_ray, out hit, 4f))
         { 
             if (hit.collider.GetComponent<PlayerController>()) 
             { 
@@ -32,11 +32,5 @@ public class Man : MonoBehaviour
         yield return new WaitForSeconds(3f);
         PetDoorAnimation petDoorAnimation = FindObjectOfType<PetDoorAnimation>();
         petDoorAnimation.CloseDoor();
-    }
-    
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(_ray.origin, _ray.direction * 1f);
     }
 }

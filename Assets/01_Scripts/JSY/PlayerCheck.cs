@@ -8,7 +8,10 @@ public enum ObjectType
     notGetObject,
     fakeObject,
     imageObject,
-    offeringObject
+    offeringObject,
+    eyeTrickObject,
+    tvObject,
+    doorObject
 }
 public class PlayerCheck : MonoBehaviour
 {
@@ -17,6 +20,7 @@ public class PlayerCheck : MonoBehaviour
     [SerializeField] public string _interactionText;
     [SerializeField] private string _explainText;
     [SerializeField] private int getObjectNumber;
+    [SerializeField] private GameObject trickObject;
     [SerializeField] private int[] mat;
     [SerializeField] private PictureMaterial[] _pictureMat;
 
@@ -87,5 +91,11 @@ public class PlayerCheck : MonoBehaviour
         {
             FindObjectOfType<OfferingBox>().MoveDown();
         }
+    }
+
+    public void IrisChangeObject(bool active)
+    {
+        trickObject.SetActive(active);
+        Destroy(gameObject);
     }
 }

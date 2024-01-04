@@ -10,6 +10,7 @@ public class PlayerRay : MonoBehaviour
     Camera mainCamera;
     private PlayerInteraction _playerInteraction;
     public bool _canTyping;
+    float time = 0f;
     private void Awake()
     {
         mainCamera = Camera.main;
@@ -18,34 +19,62 @@ public class PlayerRay : MonoBehaviour
     private void Update()
     {
         ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-
+        
         if (Physics.Raycast(ray, out hit))
         {
-            if(hit.collider.CompareTag("InteractionObject"))
+            Interection(hit);
+        }
+        
+        if (Physics.Raycast(ray, out hit, 100f))
+        {
+            Debug.Log(hit.collider.name);
+            ISeeYou(hit);
+        }
+    }
+
+    private void Interection(RaycastHit hit)
+    {
+        if(hit.collider.CompareTag("InteractionObject"))
+        {
+            var dis = Vector3.Distance(transform.position, hit.collider.transform.position);
+            Debug.Log("충돌함");
+            if (hit.collider != null && dis <= 3f)
             {
-                var dis = Vector3.Distance(transform.position, hit.collider.transform.position);
-                Debug.Log("충돌함");
-                if (hit.collider != null && dis <= 3f)
+                _playerInteraction.SetActiveInteractionPanel(true, hit.collider.GetComponent<PlayerCheck>()._interactionText);
+                if (Input.GetKeyDown(KeyCode.F))
                 {
-                    _playerInteraction.SetActiveInteractionPanel(true, hit.collider.GetComponent<PlayerCheck>()._interactionText);
-                    if (Input.GetKeyDown(KeyCode.F))
+                    hit.collider.GetComponent<PlayerCheck>().Typing();
+                    if (hit.collider.GetComponent<DrawerAnimation>())
                     {
-                        hit.collider.GetComponent<PlayerCheck>().Typing();
-                        if (hit.collider.GetComponent<DrawerAnimation>())
-                        {
-                            hit.collider.GetComponent<DrawerAnimation>().OpenDrawer();
-                        }
+                        hit.collider.GetComponent<DrawerAnimation>().OpenDrawer();
                     }
                 }
-
-                if(dis > 3f)
-                {
-                    _playerInteraction.SetActiveInteractionPanel(false);
-                }
             }
-            else
+
+            if(dis > 3f)
             {
                 _playerInteraction.SetActiveInteractionPanel(false);
+            }
+        }
+        else
+        {
+            _playerInteraction.SetActiveInteractionPanel(false);
+        }
+    }
+    
+    private void ISeeYou(RaycastHit hit)
+    {
+        if (hit.collider.CompareTag("Dad"))
+        {
+            time += Time.deltaTime;
+            if (time >= 3)
+            {
+                hit.transform.position += Vector3.down;
+                hit.transform.GetComponent<AudioSource>().Play();
+                var petDoor = FindObjectOfType<PetDoorAnimation>().gameObject;
+                petDoor.GetComponent<AudioSource>().Play();
+                petDoor.transform.GetChild(1).gameObject.SetActive(true);
+                
             }
         }
     }

@@ -1,9 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Transform cameraTransform;
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] public float moveSpeed = 5f;
+    [SerializeField] private string sceneName;
     
     private CharacterController characterController;
     private DialogueManager _dialogueManager;
@@ -65,5 +67,19 @@ public class PlayerController : MonoBehaviour
         {
             moveSpeed = 5f;
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        print("야양");
+        if (other.CompareTag("Door"))
+        {
+            StartCoroutine(FadeOutAndScene());       
+        }
+    }
+    IEnumerator FadeOutAndScene()
+    {
+        Fade.Instance.FadeIn(1f);
+        yield return new WaitUntil(() => Fade.Instance.image.color.a == 1f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
 }

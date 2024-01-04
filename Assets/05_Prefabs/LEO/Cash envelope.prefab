@@ -26,17 +26,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7dd88c38a6d53f940811b591ebea2a10,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.267
+      value: 23.297
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7dd88c38a6d53f940811b591ebea2a10,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.655
+      value: 9.219
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7dd88c38a6d53f940811b591ebea2a10,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.974
+      value: 0.849
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7dd88c38a6d53f940811b591ebea2a10,
         type: 3}
@@ -82,7 +82,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b79fb7fd32e14af4c8224ae90c68c0ea, type: 2}
+      objectReference: {fileID: 2100000, guid: 0ff14ec57dcdcd449b5a3f98bb5c45ba, type: 2}
     - target: {fileID: 919132149155446097, guid: 7dd88c38a6d53f940811b591ebea2a10,
         type: 3}
       propertyPath: m_Name
@@ -101,6 +101,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 388308770496178165}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7dd88c38a6d53f940811b591ebea2a10,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1510513470795687196}
   m_SourcePrefab: {fileID: 100100000, guid: 7dd88c38a6d53f940811b591ebea2a10, type: 3}
 --- !u!1 &480402537132334157 stripped
 GameObject:
@@ -129,3 +133,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3, y: 1.5, z: 0.1}
   m_Center: {x: 0.0000038146973, y: 0, z: -0.00000017881393}
+--- !u!114 &1510513470795687196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480402537132334157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0637081b40cd55d48b4ab856433b1386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objType: 0
+  _objectName: "\uC22B\uC790\uAC00 \uC368\uC788\uB294 \uC885\uC774"
+  _interactionText: "\uC90D\uAE30"
+  _explainText: "\uC5B4\uB518\uAC00\uC5D0 \uC4F0\uC77C \uAC83 \uAC19\uB2E4."
+  getObjectNumber: 2
+  mat: 
+  _pictureMat: []
+  isTyping: 0
+  fakeisRun: 0
+  imageisRun: 0
+  globeisBroken: 0

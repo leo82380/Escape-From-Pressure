@@ -6,21 +6,21 @@ using DG.Tweening;
 
 public class Fade : MonoSingleton<Fade>
 {
-    private Image image;
+    public Image image;
     protected override void Awake()
     {
-        base.Awake();   
+        base.Awake();
         image = GetComponent<Image>();
+        FadeOut(1f);
     }
     
     public void FadeIn(float duration)
     {
-        gameObject.SetActive(true);
         image.DOFade(1f, duration);
     }
     
     public void FadeOut(float duration)
     {
-        image.DOFade(0f, duration).OnComplete(() => gameObject.SetActive(false));
+        image.DOFade(0f, duration);
     }
 }
