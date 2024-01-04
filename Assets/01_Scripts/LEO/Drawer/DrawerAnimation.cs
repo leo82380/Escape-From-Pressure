@@ -16,7 +16,6 @@ public class DrawerAnimation : MonoBehaviour
         Bottom
     }
     [SerializeField] private DrawerType drawerType;
-    [SerializeField] private GameObject cockroaches;
 
     private void Awake()
     {
@@ -29,7 +28,7 @@ public class DrawerAnimation : MonoBehaviour
         {
             case DrawerType.Top:
                 _animator.SetBool("IsTop", true);
-                cockroaches.SetActive(true);
+                StartCoroutine(FindObjectOfType<Cockroach>().Rotate());
                 break;
             case DrawerType.Middle:
                 _animator.SetBool("IsMiddle", true);

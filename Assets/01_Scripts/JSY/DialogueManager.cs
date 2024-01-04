@@ -21,6 +21,8 @@ public class DialogueManager : MonoBehaviour
     {
         if(canTyping && objectExplainText != "")
         {
+            if (playerCheck._objType == ObjectType.offeringObject) playerCheck.OfferingBoxObject();
+
             canTyping = false;
             _dialoguePanel.SetActive(true);
             _objNameText.text = objectNameText;
