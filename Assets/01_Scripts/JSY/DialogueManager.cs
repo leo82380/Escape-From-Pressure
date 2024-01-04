@@ -74,6 +74,7 @@ public class DialogueManager : MonoBehaviour
             else if (playerCheck._objType == ObjectType.fakeObject) playerCheck.TrickObject();
             else if (playerCheck._objType == ObjectType.imageObject) playerCheck.ImageObject();
             else if (playerCheck._objType == ObjectType.offeringObject) playerCheck.OfferingBoxObject();
+            else if (playerCheck._objType == ObjectType.eyeTrickObject) playerCheck.IrisChangeObject(true);
             else if (playerCheck._objType == ObjectType.tvObject) FindObjectOfType<TV_MaterialController>().PlayNoize();
             if (playerCheck._objType == ObjectType.doorObject)
             {
