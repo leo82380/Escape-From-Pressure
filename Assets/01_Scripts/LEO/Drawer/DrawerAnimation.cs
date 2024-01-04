@@ -27,6 +27,8 @@ public class DrawerAnimation : MonoBehaviour
     
     public void OpenDrawer()
     {
+        Scene scene = SceneManager.GetActiveScene();
+        Debug.Log(scene.name);
         switch (drawerType)
         {
             case DrawerType.Top:
@@ -38,11 +40,13 @@ public class DrawerAnimation : MonoBehaviour
                 break;
             case DrawerType.Middle:
                 _animator.SetBool("IsMiddle", true);
+                if (scene.name is "Stage-2" or "Stage-4")
+                {
+                    StartCoroutine(CloseDrawer());
+                }
                 break;
             case DrawerType.Bottom:
-                Scene scene = SceneManager.GetActiveScene();
-                Debug.Log(scene.name);
-                if (scene.name == "Stage-3")
+                if (scene.name is "Stage-3" or "Stage-4")
                 {
                     _animator.SetTrigger("IsBottom");
                     if (_animator.GetBool("ISBottom")) return;
