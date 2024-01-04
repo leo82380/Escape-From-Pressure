@@ -1,9 +1,10 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class FinalDoorEvent : MonoBehaviour
+public class FinalDoorEvent : MonoSingleton<FinalDoorEvent>
 {
     [SerializeField] private float inTime = 8;
     [SerializeField] private int flagCount = 75;
@@ -21,6 +22,7 @@ public class FinalDoorEvent : MonoBehaviour
 
     public IEnumerator DoorEvent()
     {
+        Debug.Log("DoorEvent");
         filledCircle.gameObject.SetActive(true);
         filledCircle.fillAmount = 0;
         time = 0;
@@ -42,6 +44,6 @@ public class FinalDoorEvent : MonoBehaviour
         
         if (filledCircle.fillAmount >= 0.99f && myCount == flagCount) isClear = true;
         else isClear = false;
-        yield return null;
+        SceneManager.LoadScene("");
     }
 }
