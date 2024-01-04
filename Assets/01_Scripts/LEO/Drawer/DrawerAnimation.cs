@@ -40,7 +40,7 @@ public class DrawerAnimation : MonoBehaviour
                 break;
             case DrawerType.Middle:
                 _animator.SetBool("IsMiddle", true);
-                if (scene.name is "Stage-2" or "Stage-4")
+                if (scene.name is "Stage-2" or "Stage-4" or "Stage-3")
                 {
                     StartCoroutine(CloseDrawer());
                 }
