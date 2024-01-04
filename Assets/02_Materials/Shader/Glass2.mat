@@ -62,14 +62,14 @@ Material:
     - _Cull: 2
     - _DistortStrenght: 0.0001
     - _DstBlend: 10
-    - _Metallic: 1
+    - _Metallic: 0.644
     - _NoiseScale: 59
     - _NormalStrenght: 0.009
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _ReflectionStrenght: 1
-    - _Smoothness: 1
+    - _ReflectionStrenght: 0.25
+    - _Smoothness: 0.345
     - _SrcBlend: 1
     - _Surface: 1
     - _WorkflowMode: 1
@@ -77,5 +77,5 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 0.011841535, g: 0.011841535, b: 0.011841535, a: 0}
+    - _Color: {r: 0.37450984, g: 0.37450984, b: 0.37450984, a: 0}
   m_BuildTextureStacks: []

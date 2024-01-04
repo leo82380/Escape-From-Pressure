@@ -11,17 +11,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6f7969e8b31a3de43a8d2b39208e04ac,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.873
+      value: 9.143
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6f7969e8b31a3de43a8d2b39208e04ac,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.479
+      value: 6.1406527
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6f7969e8b31a3de43a8d2b39208e04ac,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.901
+      value: -5.069
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6f7969e8b31a3de43a8d2b39208e04ac,
         type: 3}
@@ -36,12 +36,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6f7969e8b31a3de43a8d2b39208e04ac,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6f7969e8b31a3de43a8d2b39208e04ac,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6f7969e8b31a3de43a8d2b39208e04ac,
         type: 3}
@@ -176,7 +176,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0637081b40cd55d48b4ab856433b1386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _objType: 1
   _objectName: TV
   _interactionText: "\uC791\uB3D9\uC2DC\uD0A4\uAE30"
   _explainText: "...\uC791\uB3D9\uB418\uC9C0 \uC54A\uB294 \uAC70 \uAC19\uB2E4."
+  getObjectNumber: 0
   isTyping: 0

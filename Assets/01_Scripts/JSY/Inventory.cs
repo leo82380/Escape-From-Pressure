@@ -1,0 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Inventory : MonoBehaviour
+{
+    [SerializeField] private Image[] inventoryImage;
+
+    private void Awake()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            inventoryImage[i] = transform.GetChild(i).GetComponent<Image>();
+        }
+    }
+    public void InventoryImageSetActive(int _getObjectNumber)
+    {
+        inventoryImage[_getObjectNumber].enabled = true;
+    }
+}
