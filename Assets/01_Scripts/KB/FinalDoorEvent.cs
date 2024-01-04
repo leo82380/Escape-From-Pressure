@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class FinalDoorEvent : MonoSingleton<FinalDoorEvent>
 {
+    [SerializeField] private AudioSource audio;
+    [SerializeField] private AudioSource screamAudio;
+    [SerializeField] private Image blackImage;
+    
     [SerializeField] private float inTime = 8;
     [SerializeField] private int flagCount = 75;
     [SerializeField] private Image filledCircle;
@@ -42,6 +46,23 @@ public class FinalDoorEvent : MonoSingleton<FinalDoorEvent>
         
         if (filledCircle.fillAmount >= 0.99f && myCount >= flagCount) isClear = true;
         else isClear = false;
+        
+        StartCoroutine(End());
+    }
+
+    private IEnumerator End()
+    {
+        blackImage.gameObject.SetActive(true);
+        if (isClear)
+        {
+            audio.Play();
+        }
+        else
+        {
+            screamAudio.Play();
+        }
+        
+        yield return new WaitForSeconds(4f);
         SceneManager.LoadScene("Credit");
     }
 }
