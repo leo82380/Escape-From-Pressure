@@ -29,7 +29,7 @@ public class DrawerAnimation : MonoBehaviour
         {
             case DrawerType.Top:
                 _animator.SetBool("IsTop", true);
-                cockroaches.SetActive(true);
+                StartCoroutine(FindObjectOfType<Cockroach>().Rotate());
                 break;
             case DrawerType.Middle:
                 _animator.SetBool("IsMiddle", true);
