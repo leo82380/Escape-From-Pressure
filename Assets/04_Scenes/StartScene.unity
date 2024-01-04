@@ -1092,6 +1092,7 @@ MonoBehaviour:
   _anotherTexts:
   - {fileID: 1214960047}
   - {fileID: 1802664360}
+  - {fileID: 1218092466}
 --- !u!114 &279042918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2213,6 +2214,7 @@ MonoBehaviour:
   _anotherTexts:
   - {fileID: 1802664360}
   - {fileID: 1127858985}
+  - {fileID: 1218092466}
 --- !u!114 &1237779812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3012,6 +3014,7 @@ MonoBehaviour:
   _anotherTexts:
   - {fileID: 1214960047}
   - {fileID: 1127858985}
+  - {fileID: 1802664360}
 --- !u!114 &2013208010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3259,6 +3262,7 @@ MonoBehaviour:
   _anotherTexts:
   - {fileID: 1214960047}
   - {fileID: 1127858985}
+  - {fileID: 1218092466}
 --- !u!114 &2143753107
 MonoBehaviour:
   m_ObjectHideFlags: 0
