@@ -3368,6 +3368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d97a88a574a4f40a98814eca2dbcd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dad: {fileID: 0}
 --- !u!95 &1735134113
 Animator:
   serializedVersion: 5
@@ -3427,6 +3428,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626467299966916345, guid: b1229820c58aed748bc50def76a362fb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9002692673347910970, guid: b1229820c58aed748bc50def76a362fb,
         type: 3}
