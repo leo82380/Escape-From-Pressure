@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 public class DrawerAnimation : MonoBehaviour
 {
     private Animator _animator;
+    private bool _isDrawerOpen = false;
     
     private enum DrawerType
     {
@@ -28,6 +29,8 @@ public class DrawerAnimation : MonoBehaviour
         {
             case DrawerType.Top:
                 _animator.SetBool("IsTop", true);
+                if (_isDrawerOpen) return;
+                _isDrawerOpen = true;
                 StartCoroutine(FindObjectOfType<Cockroach>().Rotate());
                 break;
             case DrawerType.Middle:
