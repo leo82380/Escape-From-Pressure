@@ -60,16 +60,16 @@ Material:
     - _BlendModePreserveSpecular: 1
     - _CastShadows: 1
     - _Cull: 2
-    - _DistortStrenght: 0.039
+    - _DistortStrenght: 0.0001
     - _DstBlend: 10
     - _Metallic: 1
-    - _NoiseScale: 314
-    - _NormalStrenght: 0.024
+    - _NoiseScale: 0.01
+    - _NormalStrenght: 0.132
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _ReflectionStrenght: 2.29
-    - _Smoothness: 0.348
+    - _ReflectionStrenght: 0
+    - _Smoothness: 0
     - _SrcBlend: 1
     - _Surface: 1
     - _WorkflowMode: 1

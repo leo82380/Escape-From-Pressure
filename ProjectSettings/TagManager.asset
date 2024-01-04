@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - InteractionObject
+  - playerCanvas
+  - Dad
   layers:
   - Default
   - TransparentFX

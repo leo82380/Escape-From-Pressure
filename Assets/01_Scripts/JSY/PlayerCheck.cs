@@ -7,7 +7,10 @@ public enum ObjectType
     getObject,
     notGetObject,
     fakeObject,
-    imageObject
+    imageObject,
+    offeringObject,
+    eyeTrickObject,
+    tvObject
 }
 public class PlayerCheck : MonoBehaviour
 {
@@ -16,20 +19,21 @@ public class PlayerCheck : MonoBehaviour
     [SerializeField] public string _interactionText;
     [SerializeField] private string _explainText;
     [SerializeField] private int getObjectNumber;
+    [SerializeField] private GameObject trickObject;
     [SerializeField] private int[] mat;
+    [SerializeField] private PictureMaterial[] _pictureMat;
 
     public bool isTyping;
     public bool fakeisRun;
     public bool imageisRun;
+    public bool globeisBroken;
     private DialogueManager _dialogueManager;
     private Inventory _inventory;
-    private PictureMaterial[] _pictureMat;
 
     private void Awake()
     {
         _dialogueManager = FindObjectOfType<DialogueManager>();
         _inventory = FindObjectOfType<Inventory>();
-        _pictureMat = FindObjectsOfType<PictureMaterial>();
     }
     public void Typing()
     {
@@ -72,5 +76,25 @@ public class PlayerCheck : MonoBehaviour
             imageisRun = true;
         }
         yield return null;
+    }
+
+    public void OfferingBoxObject()
+    {
+        if(!globeisBroken)
+        {
+            globeisBroken = true;
+            _explainText = "";
+            FindObjectOfType<Globe>().ChangeGlobe();
+        }
+        else if(_inventory.hasObject[1] && globeisBroken)
+        {
+            FindObjectOfType<OfferingBox>().MoveDown();
+        }
+    }
+
+    public void IrisChangeObject(bool active)
+    {
+        trickObject.SetActive(active);
+        Destroy(gameObject);
     }
 }

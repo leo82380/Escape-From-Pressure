@@ -1,11 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class DrawerAnimation : MonoBehaviour
 {
     private Animator _animator;
+    private bool _isDrawerOpen = false;
     
     private enum DrawerType
     {
@@ -26,7 +29,9 @@ public class DrawerAnimation : MonoBehaviour
         {
             case DrawerType.Top:
                 _animator.SetBool("IsTop", true);
-                StartCoroutine(CloseDrawer());
+                if (_isDrawerOpen) return;
+                _isDrawerOpen = true;
+                StartCoroutine(FindObjectOfType<Cockroach>().Rotate());
                 break;
             case DrawerType.Middle:
                 _animator.SetBool("IsMiddle", true);
