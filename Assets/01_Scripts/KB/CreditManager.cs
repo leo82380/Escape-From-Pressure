@@ -9,7 +9,12 @@ public class CreditManager : MonoBehaviour
     public Image background;
     [SerializeField] private float speed;
 
-    private void Awake() => background.enabled = FinalDoorEvent.Instance.GetIsClear;
+    private void Awake()
+    {
+        background.enabled = FinalDoorEvent.Instance.GetIsClear;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
 
     void Update()
     {
