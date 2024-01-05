@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class FinalDoorEvent : MonoSingleton<FinalDoorEvent>
 {
+    
+    
     [SerializeField] private float inTime = 8;
     [SerializeField] private int flagCount = 75;
-    [SerializeField] private Image filledCircle;
+    
     
     [SerializeField] private bool isClear = false;
     [SerializeField] private int myCount = 0;
@@ -18,13 +20,26 @@ public class FinalDoorEvent : MonoSingleton<FinalDoorEvent>
     protected override void Awake()
     {
         base.Awake();
+        
+    }
+
+    private void Start()
+    {
+        StartCoroutine(Take());
+    }
+
+    IEnumerator Take()
+    {
+        yield return new WaitForSeconds(1f);
+        
     }
 
     public IEnumerator DoorEvent()
     {
         Debug.Log("DoorEvent");
-        filledCircle.gameObject.SetActive(true);
-        filledCircle.fillAmount = 0;
+        SoundEnding soundEnding = FindObjectOfType<SoundEnding>();
+        soundEnding.filledCircle.gameObject.SetActive(true);
+        soundEnding.filledCircle.fillAmount = 0;
         time = 0;
         
         while (time <= inTime)
@@ -33,15 +48,32 @@ public class FinalDoorEvent : MonoSingleton<FinalDoorEvent>
             if (Input.GetKeyDown(KeyCode.Space))
             { 
                 myCount++;
-                filledCircle.fillAmount += (float)1 / flagCount;
+                soundEnding.filledCircle.fillAmount += (float)1 / flagCount;
             }
-            if (filledCircle.fillAmount >= 0.99f && myCount == flagCount) isClear = true;
+            if (soundEnding.filledCircle.fillAmount >= 0.99f && myCount == flagCount) isClear = true;
             else isClear = false; 
             yield return null;
         }
         
-        if (filledCircle.fillAmount >= 0.99f && myCount >= flagCount) isClear = true;
+        if (soundEnding.filledCircle.fillAmount >= 0.99f && myCount >= flagCount) isClear = true;
         else isClear = false;
+        
+        StartCoroutine(End(soundEnding));
+    }
+
+    private IEnumerator End(SoundEnding soundEnding)
+    {
+        soundEnding.blackImage.gameObject.SetActive(true);
+        if (isClear)
+        {
+            soundEnding.audio.Play();
+        }
+        else
+        {
+            soundEnding.screamAudio.Play();
+        }
+        
+        yield return new WaitForSeconds(4f);
         SceneManager.LoadScene("Credit");
     }
 }

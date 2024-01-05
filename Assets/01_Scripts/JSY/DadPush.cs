@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DadPush : MonoBehaviour
 {
@@ -22,6 +23,11 @@ public class DadPush : MonoBehaviour
             _animator.SetBool("Run", false);
             _animator.SetBool("Push", true);
             FinalDoorEvent.Instance.StartCoroutine(FinalDoorEvent.Instance.DoorEvent());
+        }
+
+        if (other.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("Jumpscare");
         }
     }
 }
