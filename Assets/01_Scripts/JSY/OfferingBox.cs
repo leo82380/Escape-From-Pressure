@@ -7,7 +7,7 @@ public class OfferingBox : MonoBehaviour
     void Awake() => StartCoroutine(CoolTimeMove());
     IEnumerator CoolTimeMove()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(20f);
         transform.DOMoveY(5.7f, 2f);
     }
 
