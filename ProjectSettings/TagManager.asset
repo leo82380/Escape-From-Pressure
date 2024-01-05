@@ -8,6 +8,8 @@ TagManager:
   - playerCanvas
   - Dad
   - Door
+  - Trigger
+  - Doorend
   layers:
   - Default
   - TransparentFX
