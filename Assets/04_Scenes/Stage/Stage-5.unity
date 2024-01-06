@@ -14,8 +14,8 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 1, g: 1, b: 1, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -27,7 +27,7 @@ RenderSettings:
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 5eae8f65eabf7ee4994b422cd10214bc, type: 2}
-  m_HaloStrength: 0.5
+  m_HaloStrength: 1
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
@@ -5113,6 +5113,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1201390775}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1219562269 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4391057639702072487, guid: 117a29c2d6622e84da8b25c35cc26c99,
+    type: 3}
+  m_PrefabInstance: {fileID: 463937355}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1224920511
 GameObject:
   m_ObjectHideFlags: 0
@@ -6723,6 +6729,7 @@ MonoBehaviour:
   screamAudio: {fileID: 1281729216}
   blackImage: {fileID: 437036734}
   filledCircle: {fileID: 988894172}
+  bgm: {fileID: 1219562269}
 --- !u!4 &1605932490
 Transform:
   m_ObjectHideFlags: 0
