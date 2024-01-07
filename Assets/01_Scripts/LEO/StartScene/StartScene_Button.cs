@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -17,6 +18,13 @@ public class StartScene_Button : MonoBehaviour, IPointerClickHandler, IPointerEn
     [SerializeField] private TMP_Text _myText;
     [SerializeField] private List<TMP_Text> _anotherTexts;
     
+    private AudioSource _buttonAudioSource;
+
+    private void Awake()
+    {
+        _buttonAudioSource = transform.parent.GetComponent<AudioSource>();
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         switch (buttonType)
@@ -44,6 +52,7 @@ public class StartScene_Button : MonoBehaviour, IPointerClickHandler, IPointerEn
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        _buttonAudioSource.Play();
         _myText.fontSize = Mathf.Lerp(_myText.fontSize, 150, Time.deltaTime * 20);
         foreach (var text in _anotherTexts)
         {

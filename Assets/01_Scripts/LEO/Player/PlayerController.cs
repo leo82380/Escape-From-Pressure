@@ -28,6 +28,14 @@ public class PlayerController : MonoBehaviour
     {
         if (!_dialogueManager.canTyping) return;
 
+        Move();
+        Crouch();
+        Run();
+    }
+
+    // 이동
+    private void Move()
+    {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 moveDirection = new Vector3(horizontal, 0, vertical);
@@ -39,30 +47,29 @@ public class PlayerController : MonoBehaviour
         moveDirection.y = yVelocity;
         
         characterController.Move(moveDirection * Time.deltaTime);
-        Crouch();
-        Run();
     }
     
     // 웅크리기
     private void Crouch()
     {
-        if (_isCrouching && Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            _isCrouching = false;
-            moveSpeed = 5f;
-        }
-        else if (!_isCrouching && Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKey(KeyCode.LeftControl))
         {
             _isCrouching = true;
-            moveSpeed = 1f;
+        }
+        else
+        {
+            _isCrouching = false;
         }
         
         float targetY = _isCrouching ? 0.2f : 0.5f;
         cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, new Vector3(0, targetY, 0), 0.2f);
+        moveSpeed = _isCrouching ? 1f : 5f;
     }
     
+    // 달리기
     private void Run()
     {
+        if (_isCrouching) return;
         if (Input.GetKey(KeyCode.LeftShift))
         {
             moveSpeed = 10f;

@@ -11,7 +11,7 @@ public enum ObjectType
     offeringObject,
     eyeTrickObject,
     tvObject,
-    doorObject
+    doorObject,
 }
 public class PlayerCheck : MonoBehaviour
 {
@@ -42,6 +42,14 @@ public class PlayerCheck : MonoBehaviour
         {
             isTyping = true;
             StartCoroutine(_dialogueManager.TypingRoutine(_objectName, _explainText, this));
+            if (_objectName == "라디오")
+            {
+                var radio = FindObjectOfType<RadioAudio>();
+                if (!radio.isPlaying)
+                    radio.PlayAudio();
+                else
+                    radio.StopAudio();
+            }
         }
     }
     public void GetObject()
