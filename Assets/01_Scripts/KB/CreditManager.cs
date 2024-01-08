@@ -11,7 +11,7 @@ public class CreditManager : MonoBehaviour
 
     private void Awake()
     {
-        background.enabled = FinalDoorEvent.Instance.GetIsClear;
+        background.enabled = !FinalDoorEvent.Instance.GetIsClear;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }

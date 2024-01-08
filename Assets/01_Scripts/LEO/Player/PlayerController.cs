@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private bool _isCrouching;
     private bool isWalking;
     private bool isOpen;
+    private bool runrun;
     private float gravity = -5f;
     private float yVelocity = 0f;
 
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!_dialogueManager.canTyping) return;
         if (IsOpen) return;
+        if (runrun) return;
 
         Move();
         Crouch();
@@ -133,7 +135,18 @@ public class PlayerController : MonoBehaviour
         {
             trigger.isTrigger = true;
             _dadAnimator.SetBool("Run", true);
+            _dadAnimator.gameObject.GetComponent<AudioSource>().Play();
+            StartCoroutine(RunRun());
         }
+    }
+
+    private IEnumerator RunRun()
+    {
+        moveSpeed = 0;
+        runrun = true;
+        yield return new WaitForSeconds(1.5f);
+        moveSpeed = 5f;
+        runrun = false;
     }
 
     private void OnTriggerExit(Collider other)

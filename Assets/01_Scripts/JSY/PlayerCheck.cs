@@ -54,6 +54,10 @@ public class PlayerCheck : MonoBehaviour
                 else
                     radio.StopAudio();
             }
+            if (_objectName is "서랍" && _audioSource)
+            {
+                _audioSource.Play();
+            }
         }
     }
     public void GetObject()
@@ -69,6 +73,10 @@ public class PlayerCheck : MonoBehaviour
             _audioSource.PlayOneShot(_getKeyAudio);
         }
 
+        if (_objectName is "금붕어")
+        {
+            _audioSource.Play();
+        }
         _meshRenderer.enabled = false;
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
@@ -84,6 +92,15 @@ public class PlayerCheck : MonoBehaviour
         fakekey = true;
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<BoxCollider>().enabled = false;
+        StartCoroutine(Audio());
+    }
+
+    private IEnumerator Audio()
+    {
+        _audioSource.Play();
+        yield return new WaitUntil(() => !_audioSource.isPlaying);
+        _audioSource.clip = _getKeyAudio;
+        _audioSource.Play();
     }
 
     public void ImageObject()
@@ -100,6 +117,7 @@ public class PlayerCheck : MonoBehaviour
             _pictureMat[2].ChangeMaterial(10);
             for (int i = 0; i < 2; i++)
                 _pictureMat[i].GetComponent<Rigidbody>().isKinematic = false;
+            _audioSource.Play();
             imageisRun = true;
         }
         yield return null;

@@ -13,6 +13,7 @@ public class ButtonController : MonoBehaviour
     [SerializeField] private Ease ease;
     [SerializeField] private string _passwordNumber;
     [SerializeField] private DrawerAnimation drawer;
+    [SerializeField] private AudioSource _audioSource;
 
     private bool isPanel;
 
@@ -98,6 +99,7 @@ public class ButtonController : MonoBehaviour
     private IEnumerator Success()
     {
         drawer._animator.SetBool("ISBottom", true);
+        _audioSource.Play();
         yield return new WaitForSeconds(1.7f);
         drawer.passwordPanel.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
