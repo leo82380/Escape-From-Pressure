@@ -2617,6 +2617,7 @@ MonoBehaviour:
   _pictureMat: []
   isTyping: 0
   fakeisRun: 0
+  fakekey: 0
   imageisRun: 0
   globeisBroken: 0
 --- !u!1001 &540592684
@@ -5518,6 +5519,7 @@ MonoBehaviour:
   _pictureMat: []
   isTyping: 0
   fakeisRun: 0
+  fakekey: 0
   imageisRun: 0
   globeisBroken: 0
 --- !u!65 &1268910351
@@ -6688,6 +6690,7 @@ MonoBehaviour:
   _pictureMat: []
   isTyping: 0
   fakeisRun: 0
+  fakekey: 0
   imageisRun: 0
   globeisBroken: 0
 --- !u!4 &1487823009 stripped
@@ -12785,7 +12788,7 @@ PrefabInstance:
     - target: {fileID: 5075743990117176295, guid: 414a4dba04a014a46bea91755ffb3a0f,
         type: 3}
       propertyPath: _minute
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5075743990117176295, guid: 414a4dba04a014a46bea91755ffb3a0f,
         type: 3}

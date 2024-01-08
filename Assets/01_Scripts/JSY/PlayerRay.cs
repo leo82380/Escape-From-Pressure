@@ -10,6 +10,7 @@ public class PlayerRay : MonoBehaviour
     Camera mainCamera;
     private PlayerInteraction _playerInteraction;
     public bool _canTyping;
+    public bool isOpen;
     float time = 0f;
     private void Awake()
     {
@@ -27,7 +28,6 @@ public class PlayerRay : MonoBehaviour
         
         if (Physics.Raycast(ray, out hit, 100f))
         {
-            Debug.Log(hit.collider.name);
             ISeeYou(hit);
         }
     }
@@ -69,9 +69,11 @@ public class PlayerRay : MonoBehaviour
             time += Time.deltaTime;
             if (time >= 3)
             {
+                isOpen = true;
                 hit.transform.position += Vector3.down;
                 hit.transform.GetComponent<AudioSource>().Play();
                 var petDoor = FindObjectOfType<PetDoorAnimation>().gameObject;
+                petDoor.GetComponent<Animator>().SetBool("IsOpen", true);
                 petDoor.GetComponent<AudioSource>().Play();
                 petDoor.transform.GetChild(1).gameObject.SetActive(true);
                 

@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/Assets/01_Scripts/JSY/ButtonController.cs" charset="x-windows-949" />
     <file url="file://$PROJECT_DIR$/Assets/01_Scripts/JSY/PlayerRay.cs" charset="x-windows-949" />
     <file url="file://$PROJECT_DIR$/Assets/01_Scripts/JSY/Timer.cs" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/Assets/01_Scripts/LEO/Door/DoorAnimationController.cs" charset="x-windows-949" />
   </component>
 </project>

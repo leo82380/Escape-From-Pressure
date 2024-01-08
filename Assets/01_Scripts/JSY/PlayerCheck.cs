@@ -23,18 +23,22 @@ public class PlayerCheck : MonoBehaviour
     [SerializeField] private GameObject trickObject;
     [SerializeField] private int[] mat;
     [SerializeField] private PictureMaterial[] _pictureMat;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _getKeyAudio;
 
     public bool isTyping;
     public bool fakeisRun;
+    public bool fakekey;
     public bool imageisRun;
     public bool globeisBroken;
     private DialogueManager _dialogueManager;
     private Inventory _inventory;
-
+    private MeshRenderer _meshRenderer;
     private void Awake()
     {
         _dialogueManager = FindObjectOfType<DialogueManager>();
         _inventory = FindObjectOfType<Inventory>();
+        _meshRenderer = GetComponent<MeshRenderer>();
     }
     public void Typing()
     {
@@ -54,7 +58,19 @@ public class PlayerCheck : MonoBehaviour
     }
     public void GetObject()
     {
+        StartCoroutine(GetOBJ());
+    }
+
+    private IEnumerator GetOBJ()
+    {
         _inventory.InventoryImageSetActive(getObjectNumber);
+        if (_objectName == "열쇠" && _objType == ObjectType.getObject && _audioSource)
+        {
+            _audioSource.PlayOneShot(_getKeyAudio);
+        }
+
+        _meshRenderer.enabled = false;
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
 
@@ -64,8 +80,10 @@ public class PlayerCheck : MonoBehaviour
         {
             _pictureMat[i].ChangeMaterial(mat[i]);
         }
-        Destroy(gameObject);
         fakeisRun = true;
+        fakekey = true;
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<BoxCollider>().enabled = false;
     }
 
     public void ImageObject()
