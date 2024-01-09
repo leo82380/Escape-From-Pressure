@@ -15,22 +15,12 @@ public class FinalDoorEvent : MonoSingleton<FinalDoorEvent>
     [SerializeField] private bool isClear = false;
     [SerializeField] private int myCount = 0;
     [SerializeField] private float time = 0;
+    
     public bool GetIsClear => isClear;
 
     protected override void Awake()
     {
         base.Awake();
-        
-    }
-
-    private void Start()
-    {
-        StartCoroutine(Take());
-    }
-
-    IEnumerator Take()
-    {
-        yield return new WaitForSeconds(1f);
         
     }
 
@@ -64,6 +54,10 @@ public class FinalDoorEvent : MonoSingleton<FinalDoorEvent>
     private IEnumerator End(SoundEnding soundEnding)
     {
         soundEnding.blackImage.gameObject.SetActive(true);
+        foreach (var audio in soundEnding.audios)
+        {
+            audio.Stop();
+        }
         if (isClear)
         {
             soundEnding.audio.Play();
@@ -73,7 +67,7 @@ public class FinalDoorEvent : MonoSingleton<FinalDoorEvent>
             soundEnding.screamAudio.Play();
         }
         
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(7f);
         SceneManager.LoadScene("Credit");
     }
 }

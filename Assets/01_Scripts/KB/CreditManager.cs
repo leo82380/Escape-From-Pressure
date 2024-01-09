@@ -11,7 +11,7 @@ public class CreditManager : MonoBehaviour
 
     private void Awake()
     {
-        background.enabled = FinalDoorEvent.Instance.GetIsClear;
+        background.enabled = !FinalDoorEvent.Instance.GetIsClear;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
@@ -23,14 +23,18 @@ public class CreditManager : MonoBehaviour
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            speed += 2;
-            speed = Mathf.Clamp(speed, 80, 160);
+            speed = 160;
+            //speed = Mathf.Clamp(speed, 80, 160);
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            speed -= 2;
-            speed = Mathf.Clamp(speed, 40, 160);
+            speed = -160;
+        }
+        
+        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            speed = 80;
         }
 
         if (Input.GetKeyDown(KeyCode.R))

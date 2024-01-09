@@ -36,13 +36,19 @@ public class DrawerAnimation : MonoBehaviour
                 StartCoroutine(CloseDrawer());
                 if (_isDrawerOpen) return;
                 _isDrawerOpen = true;
-                StartCoroutine(FindObjectOfType<Cockroach>().Rotate());
+                if (!(scene.name is "Stage-2"))
+                    StartCoroutine(FindObjectOfType<Cockroach>().Rotate());
                 break;
             case DrawerType.Middle:
                 _animator.SetBool("IsMiddle", true);
                 if (scene.name is "Stage-2" or "Stage-4" or "Stage-3")
                 {
                     StartCoroutine(CloseDrawer());
+                }
+
+                if (scene.name is "Stage-2")
+                {
+                    StartCoroutine(FindObjectOfType<Cockroach>().Rotate());
                 }
                 break;
             case DrawerType.Bottom:

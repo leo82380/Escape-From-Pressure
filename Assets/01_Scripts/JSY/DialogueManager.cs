@@ -54,10 +54,10 @@ public class DialogueManager : MonoBehaviour
             else if (playerCheck._objType == ObjectType.tvObject) FindObjectOfType<TV_MaterialController>().PlayNoize();
             if (playerCheck._objType == ObjectType.doorObject)
             {
-                print("ªﬂ¿Õ");
+                print("ÏÇêÏùµ");
                 if(_inventory.hasObject[0])
                 {
-                    if(!_iSeeYou) DoorAnimationController.Instance.DoorOpen(true);
+                    if(!_iSeeYou && !DoorAnimationController.Instance._animator.GetBool("Stage2")) DoorAnimationController.Instance.DoorOpen(true);
                     else
                     {
                         DoorAnimationController.Instance.StageTwoDoorOpen(true);
@@ -83,7 +83,7 @@ public class DialogueManager : MonoBehaviour
                 {
 
                     if (!_iSeeYou) {
-                        print("ªﬂ¿Õ");
+                        print("ÏÇêÏùµ");
                         DoorAnimationController.Instance.DoorOpen(true);
                     } 
                     else
