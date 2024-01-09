@@ -54,7 +54,10 @@ public class FinalDoorEvent : MonoSingleton<FinalDoorEvent>
     private IEnumerator End(SoundEnding soundEnding)
     {
         soundEnding.blackImage.gameObject.SetActive(true);
-        soundEnding.bgm.Stop();
+        foreach (var audio in soundEnding.audios)
+        {
+            audio.Stop();
+        }
         if (isClear)
         {
             soundEnding.audio.Play();
@@ -64,7 +67,7 @@ public class FinalDoorEvent : MonoSingleton<FinalDoorEvent>
             soundEnding.screamAudio.Play();
         }
         
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(7f);
         SceneManager.LoadScene("Credit");
     }
 }

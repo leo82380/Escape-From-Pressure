@@ -37,7 +37,6 @@ public class PlayerRay : MonoBehaviour
         if(hit.collider.CompareTag("InteractionObject"))
         {
             var dis = Vector3.Distance(transform.position, hit.collider.transform.position);
-            Debug.Log("Ãæµ¹ÇÔ");
             if (hit.collider != null && dis <= 3f)
             {
                 _playerInteraction.SetActiveInteractionPanel(true, hit.collider.GetComponent<PlayerCheck>()._interactionText);

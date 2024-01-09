@@ -27,7 +27,7 @@ public class Jumpscare : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         audio.volume = Mathf.Lerp(0.65f, 0, 1);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         
         Fade.Instance.FadeIn(1f);
         yield return new WaitForSeconds(4.5f);

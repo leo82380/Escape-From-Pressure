@@ -52,6 +52,7 @@ public class ButtonController : MonoBehaviour
             {
                 TimeSet(0);
                 Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             });
         }
         else
@@ -69,6 +70,7 @@ public class ButtonController : MonoBehaviour
         {
             TimeSet(1);
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         });
         isPanel = false;
     }
