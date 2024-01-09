@@ -8,7 +8,7 @@ public class PetDoorAnimation : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        StartCoroutine(Open());
+        //StartCoroutine(Open());
     }
 
     private IEnumerator Open()

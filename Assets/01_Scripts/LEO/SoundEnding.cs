@@ -10,4 +10,5 @@ public class SoundEnding : MonoBehaviour
     [SerializeField] public AudioSource screamAudio;
     [SerializeField] public Image blackImage;
     [SerializeField] public Image filledCircle;
+    [SerializeField] public AudioSource[] audios;
 }
