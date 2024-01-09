@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private bool isWalking;
     private bool isOpen;
     private bool runrun;
+    private bool isCrush;
     private float gravity = -5f;
     private float yVelocity = 0f;
 
@@ -66,6 +68,11 @@ public class PlayerController : MonoBehaviour
     // 웅크리기
     private void Crouch()
     {
+        float move = 5f;
+        if (isCrush)
+        {
+            move = 5f * 0.635f;
+        }
         if (Input.GetKey(KeyCode.LeftControl))
         {
             _isCrouching = true;
@@ -77,16 +84,17 @@ public class PlayerController : MonoBehaviour
         
         float targetY = _isCrouching ? 0.2f : 0.5f;
         cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, new Vector3(0, targetY, 0), 0.2f);
-        moveSpeed = _isCrouching ? 1f : 5f;
+        moveSpeed = _isCrouching ? 1f : move;
     }
     
     // 달리기
     private void Run()
     {
         if (_isCrouching) return;
+        if (isCrush) return;
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            moveSpeed = 10f;
+            moveSpeed = 7f;
         }
         else
         {
@@ -135,18 +143,23 @@ public class PlayerController : MonoBehaviour
         {
             trigger.isTrigger = true;
             _dadAnimator.SetBool("Run", true);
+            if (_dadAnimator.gameObject.GetComponent<AudioSource>().isPlaying) return;
             _dadAnimator.gameObject.GetComponent<AudioSource>().Play();
-            StartCoroutine(RunRun());
+            _dadAnimator.gameObject.transform.position += Vector3.forward * 2f;
+            StartCoroutine(RunRun(other));
         }
     }
 
-    private IEnumerator RunRun()
+    private IEnumerator RunRun(Collider other)
     {
         moveSpeed = 0;
         runrun = true;
-        yield return new WaitForSeconds(1.5f);
-        moveSpeed = 5f;
+        isCrush = true;
+        other.gameObject.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(5f);
+        moveSpeed = 5f * 0.635f;
         runrun = false;
+        other.gameObject.SetActive(false);
     }
 
     private void OnTriggerExit(Collider other)

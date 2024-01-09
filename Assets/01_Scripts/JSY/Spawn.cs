@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 public class Spawn : MonoBehaviour
 {
-    [SerializeField] private GameObject eyes;
     [SerializeField] private bool dddd;
     private void Awake()
     {
@@ -19,7 +18,6 @@ public class Spawn : MonoBehaviour
             StartCoroutine(FindObjectsOfType<PictureMaterial>()[i].ChangeAllMaterial());
         }
         yield return new WaitForSeconds(3f);
-        eyes.SetActive(true);
         StartCoroutine(FindObjectOfType<LightOnOff>().OnOffLight());
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 public class DoorAnimationController : MonoSingleton<DoorAnimationController>
 {
     [SerializeField] private GameObject dad;
-    private Animator _animator;
+    public Animator _animator;
     private AudioSource _audioSource;
 
     protected override void Awake()

@@ -24,6 +24,7 @@ public class DadPush : MonoBehaviour
             gameObject.GetComponent<AudioSource>().Stop();
             _animator.SetBool("Push", true);
             FinalDoorEvent.Instance.StartCoroutine(FinalDoorEvent.Instance.DoorEvent());
+            other.gameObject.GetComponent<AudioSource>().Play();
         }
 
         if (other.gameObject.CompareTag("Player"))

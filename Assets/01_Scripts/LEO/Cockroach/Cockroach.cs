@@ -20,6 +20,7 @@ public class Cockroach : MonoBehaviour
 
     public IEnumerator Rotate()
     {
+        Debug.Log("Rotate");
         transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, 0, -145), 1f);
         yield return new WaitForSeconds(1f);
         transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, 0, -135), 1f);

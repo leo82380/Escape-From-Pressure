@@ -139,7 +139,15 @@ public class PlayerCheck : MonoBehaviour
 
     public void IrisChangeObject(bool active)
     {
-        trickObject.SetActive(active);
+        if (trickObject)
+        {
+            trickObject.SetActive(active);
+            if (trickObject.GetComponent<AudioSource>())
+            {
+                trickObject.GetComponent<AudioSource>().Play();
+            }
+        }
+
         Destroy(gameObject);
     }
 }

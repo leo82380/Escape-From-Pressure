@@ -57,7 +57,7 @@ public class DialogueManager : MonoBehaviour
                 print("삐익");
                 if(_inventory.hasObject[0])
                 {
-                    if(!_iSeeYou) DoorAnimationController.Instance.DoorOpen(true);
+                    if(!_iSeeYou && !DoorAnimationController.Instance._animator.GetBool("Stage2")) DoorAnimationController.Instance.DoorOpen(true);
                     else
                     {
                         DoorAnimationController.Instance.StageTwoDoorOpen(true);

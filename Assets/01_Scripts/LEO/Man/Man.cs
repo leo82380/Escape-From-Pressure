@@ -7,6 +7,7 @@ public class Man : MonoBehaviour
 {
     private Ray _ray;
     private Animator _animator;
+    private float time = 0;
 
     private void Awake()
     {
@@ -22,7 +23,9 @@ public class Man : MonoBehaviour
         { 
             if (hit.collider.GetComponent<PlayerController>()) 
             { 
-                StartCoroutine(Run());
+                time += Time.deltaTime;
+                if (time >= 0.5f)
+                    StartCoroutine(Run());
             }
         }
     }
